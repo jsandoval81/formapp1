@@ -1,0 +1,20 @@
+	<hr>
+
+	<% var thisYear = new Date().getFullYear(); %>
+	<footer class="ti-footer">© johnsandoval.us <%= thisYear %></footer>
+
+    <!--  JavaScript -->
+    <script src="/javascripts/jquery-2.1.1.min.js"></script>
+    <script src="/javascripts/jquery-ui.min.js"></script>
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="/javascripts/bootstrap.min.js"></script>
+
+    <!-- Turn this into an external JS file when complete -->
+    <script type="text/javascript">
+
+    	/** Highlight the nav menu item that matches the URL **/
+    	$('ul.nav a').filter(function() { return this.href == window.location; }).parent().addClass('active');
+
+    </script>
+</body>
+</html>

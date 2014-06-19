@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<% include header %>
+<body>
+    <% include navbar %>
+ 
+    <!-- Main jumbotron for a primary marketing message or call to action -->
+    <div class="jumbotron">
+        <div class="container">
+            <h1>Team Innovation App</h1>
+            <p>This application tracks the strengths an preferences of team members in order to foster an optimal working environment for efficiency and innovation.
+            	Create your profile today and see how you and your teammates share the workplace.</p>
+            <p>
+                <a class="btn btn-primary btn-lg" role="button">Get started
+                    &raquo;</a>
+            </p>
+        </div>
+    </div>
+ 
+    <div class="container">
+        
+    	<h1>You broke it!</h1>
+        <h3>Please try again later</h3>
+        <pre><%= error.stack %></pre>
+
+
+        <hr>
+ 
+        <% include footer %>
+    </div>
+    <!-- /container -->
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $('#home').addClass("active");
+        });
+    </script>
+
+    <!--  JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="/javascripts/jquery-2.1.1.min.js"></script>
+    <script src="/javascripts/jquery-ui.min.js"></script>
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="/javascripts/bootstrap.min.js"></script>
+</body>
+</html>

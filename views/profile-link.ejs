@@ -1,0 +1,50 @@
+
+<% include header %>
+<% include navbar %>
+ 
+    
+ 	 <!-- Main jumbotron -->
+    <div class="jumbotron">
+         <div class="container">
+        
+    		<h1>This will be the local profile link</h1>
+
+    	</div>   
+    </div>
+ 	<!-- Start container -->
+    <div class="container">
+        
+        <div class="col-sm-6">
+
+			<h1><span class="fa fa-sign-in"></span> Add Email Account</h1>
+
+			<p>Already have an account? <a href="/formapp1/profiles/login">Login</a></p>
+
+			<!-- show any messages that come back with authentication -->
+			<% if (message.length > 0) { %>
+				<div class="alert alert-danger"><%= message %></div>
+			<% } %>
+
+			<!-- LOGIN FORM -->
+			<form action="/formapp1/profiles/link/local" method="post">
+				<div class="form-group">
+					<label>Email</label>
+					<input type="text" class="form-control" name="email">
+				</div>
+				<div class="form-group">
+					<label>Password</label>
+					<input type="password" class="form-control" name="password">
+				</div>
+
+				<button type="submit" class="btn btn-warning btn-lg">Signup</button>
+			</form>
+
+			<hr>			
+
+		</div>
+    	
+
+    <!-- End container -->
+    </div>    
+ 
+ <% include footer %>
