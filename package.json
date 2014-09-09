@@ -1,0 +1,60 @@
+{
+  "name": "teaminnovationapp",
+  "version": "0.1.0",
+  "description": "teaminnovationapp",
+  "private": true,
+  "scripts": {
+    "start": "node ./bin/www"
+  },
+  "dependencies": {
+    "express": "~4.2.0",
+    "static-favicon": "~1.0.0",
+    "morgan": "~1.0.0",
+    "mongoose": "~3.8.3",
+    "cookie-parser": "~1.0.1",
+    "body-parser": "~1.0.0",
+    "debug": "~0.7.4",
+    "ejs": "~0.8.5",
+    "passport": "~0.1.17",
+    "passport-local": "~0.1.6",
+    "passport-linkedin": "~0.1.3",
+    "passport-google-oauth": "~0.1.5",
+    "passport-facebook": "~1.0.2",
+    "passport-twitter": "~1.0.2",
+    "connect-flash": "~0.1.1",
+    "bcrypt-nodejs": "latest",
+    "express-session": "^1.3.1",
+    "promise": "~5.0.0",
+    "MD5": "~1.2.1"
+  },
+  "devDependencies": {
+    "chai": "^1.9.1",
+    "chai-things": "^0.2.0",
+    "grunt": "^0.4.5",
+    "grunt-concurrent": "^0.5.0",
+    "grunt-contrib-clean": "^0.6.0",
+    "grunt-contrib-concat": "^0.5.0",
+    "grunt-contrib-copy": "^0.5.0",
+    "grunt-contrib-cssmin": "^0.10.0",
+    "grunt-contrib-uglify": "^0.5.1",
+    "grunt-contrib-watch": "^0.6.1",
+    "grunt-nodemon": "^0.3.0",
+    "grunt-shell": "^0.7.0",
+    "load-grunt-tasks": "^0.6.0",
+    "mocha": "^1.21.4",
+    "mocha-phantomjs": "^3.5.0",
+    "phantom": "^0.6.5",
+    "phantomjs": "^1.9.7-15",
+    "supertest": "^0.13.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jsandoval81/ti.git"
+  },
+  "author": "John Sandoval",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jsandoval81/ti/issues"
+  },
+  "homepage": "http://johnsandoval.us/ti"
+}

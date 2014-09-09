@@ -1,0 +1,109 @@
+
+
+<div class="modal">
+    <!-- Profile Detail Container -->
+    <div class="profile-detail">
+        <!-- Profile Detail Top Row -->
+        <div class="row profile-detail-row">
+            <div class="col-md-4 col-lg-3 vertical-center">
+                <img src="http://www.gravatar.com/avatar/<%= profile.hashEmail %>?s=200&amp;d=mm" alt="gravatar" />
+            </div><!--
+            --><div class="col-md-4 col-lg-3 text-left vertical-center">
+                <div class="profile-detail-name"><%= profile.userName %></div>
+                <div class="profile-detail-company"><%= profile.company %></div>
+                <div class="profile-detail-department"><%= profile.department %></div>
+            </div><!--
+            --><div class="col-lg-6 hidden-md hidden-sm hidden-xs profile-detail-description vertical-center">
+                
+            </div>
+        </div>
+
+        <div class="row">
+            <!-- Profile Detail left column -->
+            <div id="admin-user-logins" class="col-md-6">
+                <h4>Logins</h4>
+                <div class="profile-detail-border">
+                    <div class="row">
+                        <div class="col-xs-1"></div>
+                        <div class="col-xs-1 admin-login-account fa-linkedin-btn"><span class="fa fa-linkedin"></span></div>
+                        <div class="col-xs-1"><%= profile.linkedin %></div>
+                        <div class="col-xs-12 col-sm-8">
+                            <a href="mailto:<%= profile.linkedinEmail %>?subject=A%20message%20from%20the%20Ti%20Administrators"><%= profile.linkedinEmail %></a>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-1"></div>
+                        <div class="col-xs-1 admin-login-account fa-google-plus-btn"><span class="fa fa-google-plus"></span></div>
+                        <div class="col-xs-1"><%= profile.google %></div>
+                        <div class="col-xs-12 col-sm-8">
+                            <a href="mailto:<%= profile.googleEmail %>?subject=A%20message%20from%20the%20Ti%20Administrators"><%= profile.googleEmail %></a>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-1"></div>
+                        <div class="col-xs-1 admin-login-account fa-facebook-btn"><span class="fa fa-facebook"></span></div>
+                        <div class="col-xs-1"><%= profile.facebook %></div>
+                        <div class="col-xs-12 col-sm-8">
+                            <a href="mailto:<%= profile.facebookEmail %>?subject=A%20message%20from%20the%20Ti%20Administrators"><%= profile.facebookEmail %></a>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-1"></div>
+                        <div class="col-xs-1 admin-login-account btn-default"><span class="fa fa-user"></span></div>
+                        <div class="col-xs-1"><%= profile.local %></div>
+                        <div class="col-xs-12 col-sm-8">
+                            <a href="mailto:<%= profile.localEmail %>?subject=A%20message%20from%20the%20Ti%20Administrators"><%= profile.localEmail %></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Profile Detail right column -->
+            <div class="col-md-6">
+                <h4>Actions</h4>
+                <!-- Reset password form -->
+                <div class="profile-detail-border">
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-4 text-left">
+                            <button class="admin-reset btn btn-warning">Reset Password</button>
+                        </div>
+                        <div id="admin-reset-user" class="col-xs-12 col-sm-8">
+                            <div class="col-xs-12 col-sm-6"><input type="text" id="pw-reset-<%= profile.userId %>" name="pw-reset-<%= profile.userId %>" class="form-control" /></div>
+                            <button id="admin-reset-<%= profile.userId %>" class="admin-reset-confirm btn btn-warning">Confirm</button>
+                            <button class="admin-reset-cancel btn btn-default">Cancel</button>
+                        </div>
+                    </div>
+                    <!-- Reset password messages -->
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div id="admin-reset-msg">
+                                <div id="admin-reset-success"></div>
+                                <div id="admin-reset-error"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Remove user form -->
+                <div class="profile-detail-border">
+                    <div class="row">
+                        <div class="col-sm-4 text-left">
+                            <button class="admin-remove btn btn-danger">Remove User</button>
+                        </div>
+                    </div>
+                    <!-- Remove user confirmation -->
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div id="admin-remove-user">
+                                <div id="admin-remove-info" class="text-left">Warning: Removing a user will permenantly delete ALL of their information from the database. There is no option for recovery once the user has been removed. Only proceed if this is acceptable.</div>
+                                <button id="admin-remove-<%= profile.userId %>" class="admin-remove-confirm btn btn-danger">Confirm</button>
+                                <button class="admin-remove-cancel btn btn-default">Cancel</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>

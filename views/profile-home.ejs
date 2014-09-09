@@ -1,0 +1,52 @@
+
+<% include profile-home-header %>
+        
+        <div class="row profile-detail-border">
+
+            <!-- Profile gravatar -->
+            <div id="profile-home-gravatar" class="col-sm-3 text-center">
+                <img src="http://www.gravatar.com/avatar/<%= hashEmail %>?s=200&amp;d=mm" alt="Profile Picture" id="profile-gravatar" />
+                <p>
+                    Change photo at <a target="_blank" href="https://en.gravatar.com/site/login">gravatar.com</a>
+                </p>
+            </div>
+
+            <!-- Profile information -->
+            <div id="profile-home-info" class="col-sm-9">
+                <div class="row">
+                    <div class="col-sm-4 col-md-2 text-right"><label>First name:</label></div>
+                    <div class="col-sm-8 col-md-8 text-left"><%= firstName %></div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-4 col-md-2 text-right"><label>Last name: </label></div>
+                    <div class="col-sm-8 col-md-8 text-left"><%= lastName %></div>
+                </div>
+
+                <div class="row">
+                    <div class="col-sm-4 col-md-2 text-right"><label>Company:</label></div>
+                    <div class="col-sm-8 col-md-8 text-left"><%= company %></div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-4 col-md-2 text-right"><label>Team:</label></div>
+                    <div class="col-sm-8 col-md-8 text-left"><%= department %></div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-4 col-md-2 text-right"><label>Role:</label></div>
+                    <div class="col-sm-8 col-md-8 text-left"><%= role %></div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-4 col-md-2 text-right"><label>Description:</label></div>
+                    <div class="col-sm-8 col-md-8 text-left"><%= description %></div>
+                </div>
+            </div>
+
+            <div class="row text-center">
+                <!-- Edit profile button -->
+                <div class="col-sm-12">
+                    <a href="/ti/profiles/home/update" class="btn btn-primary">Edit profile</a>
+                </div>
+            </div>
+
+        </div>
+
+<% include profile-home-footer %>

@@ -1,0 +1,100 @@
+
+<% include profile-home-header %>
+        
+        <div class="row profile-detail-border">
+
+            <!-- Profile gravatar -->
+            <div id="profile-home-gravatar" class="col-sm-4 col-md-3 text-center">
+                <img src="http://www.gravatar.com/avatar/<%= hashEmail %>?s=200&amp;d=mm" alt="Profile Picture" id="profile-gravatar" />
+                <p>
+                    Change photo at <a target="_blank" href="https://en.gravatar.com/site/login">gravatar.com</a>
+                </p>
+            </div>
+
+            <!-- Profile update form -->
+            <form id="profileUpdate" action="/ti/profiles/home/update" method="post">
+            <div id="profile-home-info" class="col-sm-8 col-md-9">
+                <div class="row">
+                    <div class="col-sm-3 col-md-2 text-right"><label>First name:</label></div>
+                    <div class="col-sm-9 col-md-6 text-left">
+                        <input type="text" name="firstName" class="form-control" value="<%= firstName %>" />
+                    </div>
+                    <div id="firstname-error" class="col-sm-12 col-md-4 text-left form-error-msg">
+                        <em><% if (formInfo.firstNameError) { %><%= formInfo.firstNameError %><% } %></em>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-3 col-md-2 text-right"><label>Last name: </label></div>
+                    <div class="col-sm-9 col-md-6 text-left">
+                        <input type="text" name="lastName" class="form-control" value="<%= lastName %>" />
+                    </div>
+                    <div id="lastname-error" class="col-sm-12 col-md-4 text-left form-error-msg">
+                        <em><% if (formInfo.lastNameError) { %><%= formInfo.lastNameError %><% } %></em>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-3 col-md-2 text-right"><label>Company:</label></div>
+                    <div class="col-sm-9 col-md-6 text-left">
+                        <select name="company" class="form-control">
+                            <% var obj = profileSelections.companies; %>
+                            <% for (var option in obj) { %>
+                                <% var item = obj[option]; %>
+                                <option value="<%= item.value %>"<% if (item.selected == "yes") { %> selected<% } %>><%= item.display %></option>
+                            <% } %>
+                        </select>
+                    </div>
+                    <div id="company-error" class="col-sm-12 col-md-4 text-left form-error-msg">
+                        <em><% if (formInfo.companyError) { %><%= formInfo.companyError %><% } %></em>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-3 col-md-2 text-right"><label>Team:</label></div>
+                    <div class="col-sm-9 col-md-6 text-left">
+                        <select name="department" class="form-control">
+                            <% var obj = profileSelections.departments; %>
+                            <% for (var option in obj) { %>
+                                <% var item = obj[option]; %>
+                                <option value="<%= item.value %>"<% if (item.selected == "yes") { %> selected<% } %>><%= item.display %></option>
+                            <% } %>
+                        </select>
+                    </div>
+                    <div id="department-error" class="col-sm-12 col-md-4 text-left form-error-msg">
+                        <em>
+                            <% if (formInfo.departmentError) { %><%= formInfo.departmentError %><% } else { %>
+                            <div>Want your company or team added?</div>
+                            <div><a href="mailto:john.x.sandoval@gmail.com?subject=Request to add company/team to Ti">Email us</a></div>
+                            <% } %>
+                        </em>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-3 col-md-2 text-right"><label>Role:</label></div>
+                    <div class="col-sm-9 col-md-6 text-left"><input type="text" name="role" class="form-control" value="<%= role %>" /></div>
+                    <div id="role-error" class="col-sm-12 col-md-4 text-left form-error-msg">
+                        <em><% if (formInfo.roleError) { %><%= formInfo.roleError %><% } %></em>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-3 col-md-2 text-right"><label>Description:</label></div>
+                    <div class="col-sm-9 col-md-6 text-left"><textarea name="description" class="form-control" rows="5"><%= description %></textarea></div>
+                    <div id="description-error" class="col-sm-12 col-md-4 text-left form-error-msg">
+                        <em><% if (formInfo.descriptionError) { %><%= formInfo.descriptionError %><% } %></em>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Form buttons-->
+            <div class="row text-center">
+                <div class="col-sm-12">
+                    <!-- Submit button -->
+                    <button type="submit" class="btn btn-warning">Update</button>
+                    <!-- Cancel button -->
+                    <a href="/ti/profiles/home" class="btn btn-default">Cancel</a>
+                </div>
+            </div>
+            </form>
+
+        </div>
+
+<% include profile-home-footer %>

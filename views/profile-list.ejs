@@ -1,0 +1,54 @@
+
+<% for (i = 0; i < profileList.length; i++) { %>
+	<% var profile = profileList[i]; %>
+	<!-- Profile List Item -->
+	<div id="<%= profile.id %>" class="profile-item">
+		<!-- Profile Gravatar -->
+		<div class="profile-item-gravatar">
+			<img src="http://www.gravatar.com/avatar/<%= profile.hashEmail %>?s=80&amp;d=mm" alt="gravatar" />
+		</div>
+		<!-- Profile left block info -->
+		<div class="profile-item-info-left">
+			<!-- Profile Name -->
+			<div class="profile-item-name"><%= profile.name %></div>
+			<!-- Profile Role -->
+			<div class="profile-item-role"><%= profile.role %></div>
+		</div>
+		<!-- Profile middle block info -->
+		<div class="profile-item-info-middle">
+			<!-- Best Meeting Day -->
+			<div class="profile-item-mday">
+				<% if (profile.meetingDay) { %>
+					Best meeting day: <strong><%= profile.meetingDay %></strong>
+				<% } else { %>
+					&nbsp;
+				<% } %>
+			</div>
+			<!-- Best Meeting Time -->
+			<div class="profile-item-mtime">
+				<% if (profile.meetingTime) { %>
+					Best meeting time: <strong><%= profile.meetingTime %></strong>
+				<% } else { %>
+					&nbsp;
+				<% } %>
+			</div>
+			<!-- Preferred Help Contact method -->
+			<div class="profile-item-help">
+				<% if (profile.helpContact) { %>
+					For help, please: <strong><%= profile.helpContact %></strong>
+				<% } else { %>
+					&nbsp;
+				<% } %>
+			</div>
+
+		</div>
+		<!-- Profile right block info -->
+		<div class="profile-item-info-right">
+			<% if (profile.strengths) { %>
+				<!-- Profile Strengths -->
+				<div class="profile-item-strengths"><%= profile.strengths %></div>
+			<% } %>
+		</div>
+
+	</div>
+<% } %>

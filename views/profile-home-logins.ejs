@@ -1,0 +1,82 @@
+
+<% include profile-home-header %>
+    
+        <div class="row">
+            <div class="col-sm-0 col-md-1"></div>
+            <!-- Local account -->
+            <div class="col-sm-6 col-md-5">
+                <div class="profile-detail-border profile-linked-account">
+                    <div class="profile-account-mask fa-user-text"><span class="fa fa-user"></span></div>
+                    <h3 class="fa-user-text"><span class="fa fa-user"></span> Local</h3>
+                    <% if (user.local.email) { %>
+                        <p>
+                            <strong>ID</strong>: <%= user._id %><br>
+                            <strong>Email</strong>: <%= user.local.email %><br>
+                            <strong>Name</strong>: <% if (user.identity.name.first && user.identity.name.last) { %><%= user.identity.name.first %> <%= user.identity.name.last %><% } %>
+                        </p>
+                        <a href="/ti/profiles/unlink/local" class="btn btn-default">Unlink</a>
+                    <% } else { %>
+                        <a href="/ti/profiles/link/local" class="btn btn-default">Link Email</a>
+                    <% } %>
+                </div>
+            </div>
+            <!-- LinkedIn account -->
+            <div class="col-sm-6 col-md-5">
+                <div class="profile-detail-border profile-linked-account">
+                    <div class="profile-account-mask fa-linkedin-text"><span class="fa fa-linkedin-square"></span></div>
+                    <h3 class="fa-linkedin-text"><span class="fa fa-linkedin-square"></span> LinkedIn</h3>
+                    <% if (user.linkedin.token) { %>
+                        <p>
+                            <strong>ID</strong>: <%= user.linkedin.id %><br>
+                            <strong>Email</strong>: <%= user.linkedin.email %><br>
+                            <strong>Name</strong>: <%= user.linkedin.name %>
+                        </p>
+                        <a href="/ti/profiles/unlink/linkedin" class="btn btn-default">Unlink</a>
+                    <% } else { %>
+                        <a href="/ti/profiles/link/linkedin" class="btn fa-linkedin-btn">Link LinkedIn</a>
+                    <% } %>
+                </div>
+            </div>
+            <div class="col-sm-0 col-md-1"></div>
+        </div>
+
+        <div class="row">
+            <div class="col-sm-0 col-md-1"></div>
+            <!-- Google account -->
+            <div class="col-sm-6 col-md-5">
+                <div class="profile-detail-border profile-linked-account">
+                    <div class="profile-account-mask fa-google-plus-text"><span class="fa fa-google-plus-square"></span></div>
+                    <h3 class="fa-google-plus-text"><span class="fa fa-google-plus-square"></span> Google+</h3>
+                    <% if (user.google.token) { %>
+                        <p>
+                            <strong>ID</strong>: <%= user.google.id %><br>
+                            <strong>Email</strong>: <%= user.google.email %><br>
+                            <strong>Name</strong>: <%= user.google.name %>
+                        </p>
+                        <a href="/ti/profiles/unlink/google" class="btn btn-default">Unlink</a>
+                    <% } else { %>
+                        <a href="/ti/profiles/link/google" class="btn fa-google-plus-btn">Link Google+</a>
+                    <% } %>
+                </div>
+            </div>
+            <!-- Facebook account -->
+            <div class="col-sm-6 col-md-5">
+                <div class="profile-detail-border profile-linked-account">
+                    <div class="profile-account-mask fa-facebook-text"><span class="fa fa-facebook-square"></span></div>
+                    <h3 class="fa-facebook-text"><span class="fa fa-facebook-square"></span> Facebook</h3>
+                    <% if (user.facebook.token) { %>
+                        <p>
+                            <strong>ID</strong>: <%= user.facebook.id %><br>
+                            <strong>Email</strong>: <%= user.facebook.email %><br>
+                            <strong>Name</strong>: <%= user.facebook.name %><br>
+                        </p>
+                        <a href="/ti/profiles/unlink/facebook" class="btn btn-default">Unlink</a>
+                    <% } else { %>
+                        <a href="/ti/profiles/link/facebook" class="btn fa-facebook-btn">Link Facebook</a>
+                    <% } %>
+                </div>
+            </div>
+            <div class="col-sm-0 col-md-1"></div>
+        </div>
+ 
+<% include profile-home-footer %>

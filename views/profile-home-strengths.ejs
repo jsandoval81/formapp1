@@ -1,0 +1,24 @@
+
+<% include profile-home-header %>
+
+        <div id="tag-box-container">
+            <!-- Team strengths -->
+            <div id="tag-box-team">
+                <label>Your strengths/skills on <%= teamName %></label>
+                <input name="tags-team" id="tags-team" class="tag-box" value="<%= teamStrengths %>" />
+            </div>
+
+            <!-- Company strengths -->
+            <div id="tag-box-company">
+                <label>Your strengths/skills at <%= companyName %>, beyond <%= teamName %></label>
+                <input name="tags-company" id="tags-company" class="tag-box" value="<%= companyStrengths %>" />
+            </div>
+
+            <!-- Other strengths -->
+            <div id="tag-box-other">
+                <label>Other strengths/skills you have</label>
+                <input name="tags-other" id="tags-other" class="tag-box" value="<%= otherStrengths %>" />
+            </div>
+        </div>
+
+<% include profile-home-footer %>

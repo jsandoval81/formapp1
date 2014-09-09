@@ -1,0 +1,184 @@
+
+<% include profile-home-header %>
+
+        <!-- Contact Preferences -->
+        <h3>Contact Preferences</h3>
+        <div class="row profile-detail-border">
+            <!-- Help Contact preferences -->
+            <div class="col-sm-6 col-md-4">
+                <div class="form-group text-left">
+                    <label>When others need help, you prefer:</label><br />
+                    <select id="contact-help-1" class="contact-preferences contact-help form-control">
+                        <% var obj = contactHelp.firstChoice; %>
+                        <% for (var option in obj) { %>
+                            <% var item = obj[option]; %>
+                            <option value="<%= item.value %>"<% if (item.selected == "yes") { %> selected<% } %>><%= item.display %></option>
+                        <% } %>
+                    </select>
+                    <em>1st choice</em>
+                </div>
+
+                <div class="form-group text-left">
+                    <select id="contact-help-2" class="contact-preferences contact-help form-control">
+                        <% var obj = contactHelp.secondChoice; %>
+                        <% for (var option in obj) { %>
+                            <% var item = obj[option]; %>
+                            <option value="<%= item.value %>"<% if (item.selected == "yes") { %> selected<% } %>><%= item.display %></option>
+                        <% } %>
+                    </select>
+                    <em>2nd choice</em>
+                </div>
+
+                <div class="form-group text-left">
+                    <select id="contact-help-3" class="contact-preferences contact-help form-control">
+                        <% var obj = contactHelp.thirdChoice; %>
+                        <% for (var option in obj) { %>
+                            <% var item = obj[option]; %>
+                            <option value="<%= item.value %>"<% if (item.selected == "yes") { %> selected<% } %>><%= item.display %></option>
+                        <% } %>
+                    </select>
+                    <em>3rd choice</em>
+                </div>
+            </div>
+            <!-- Announcement Contact preferences -->
+            <div class="col-sm-6 col-md-4">       
+                <div class="form-group text-left">
+                    <label>For team announcements, you prefer:</label><br />
+                    <select id="contact-announcements-1" class="contact-preferences contact-announcements form-control">
+                        <% var obj = contactAnnounce.firstChoice; %>
+                        <% for (var option in obj) { %>
+                            <% var item = obj[option]; %>
+                            <option value="<%= item.value %>"<% if (item.selected == "yes") { %> selected<% } %>><%= item.display %></option>
+                        <% } %>
+                    </select>
+                    <em>1st choice</em>
+                </div>
+
+                <div class="form-group text-left">
+                    <select id="contact-announcements-2" class="contact-preferences contact-announcements form-control">
+                        <% var obj = contactAnnounce.secondChoice; %>
+                        <% for (var option in obj) { %>
+                            <% var item = obj[option]; %>
+                            <option value="<%= item.value %>"<% if (item.selected == "yes") { %> selected<% } %>><%= item.display %></option>
+                        <% } %>
+                    </select>
+                    <em>2nd choice</em>
+                </div>
+
+                <div class="form-group text-left">
+                    <select id="contact-announcements-3" class="contact-preferences contact-announcements form-control">
+                        <% var obj = contactAnnounce.thirdChoice; %>
+                        <% for (var option in obj) { %>
+                            <% var item = obj[option]; %>
+                            <option value="<%= item.value %>"<% if (item.selected == "yes") { %> selected<% } %>><%= item.display %></option>
+                        <% } %>
+                    </select>
+                    <em>3rd choice</em>
+                </div>
+            </div>
+            <!-- Brainstorming Contact preferences -->
+            <div class="col-sm-6 col-md-4">       
+                <div class="form-group text-left">
+                    <label>For brainstorming, you prefer:</label><br />
+                    <select id="contact-brainstorm-1" class="contact-preferences contact-brainstorm form-control">
+                        <% var obj = contactBrainstorm.firstChoice; %>
+                        <% for (var option in obj) { %>
+                            <% var item = obj[option]; %>
+                            <option value="<%= item.value %>"<% if (item.selected == "yes") { %> selected<% } %>><%= item.display %></option>
+                        <% } %>
+                    </select>
+                    <em>1st choice</em>
+                </div>
+
+                <div class="form-group text-left">
+                    <select id="contact-brainstorm-2" class="contact-preferences contact-brainstorm form-control">
+                        <% var obj = contactBrainstorm.secondChoice; %>
+                        <% for (var option in obj) { %>
+                            <% var item = obj[option]; %>
+                            <option value="<%= item.value %>"<% if (item.selected == "yes") { %> selected<% } %>><%= item.display %></option>
+                        <% } %>
+                    </select>
+                    <em>2nd choice</em>
+                </div>
+
+                <div class="form-group text-left">
+                    <select id="contact-brainstorm-3" class="contact-preferences contact-brainstorm form-control">
+                        <% var obj = contactBrainstorm.thirdChoice; %>
+                        <% for (var option in obj) { %>
+                            <% var item = obj[option]; %>
+                            <option value="<%= item.value %>"<% if (item.selected == "yes") { %> selected<% } %>><%= item.display %></option>
+                        <% } %>
+                    </select>
+                    <em>3rd choice</em>
+                </div>
+            </div>
+            <!-- Contact methods to avoid -->
+            <div class="col-sm-6 col-md-4">       
+                <div class="form-group text-left">
+                    <label>The contact method you least prefer:</label><br />
+                    <select id="contact-avoid-1" class="contact-preferences contact-avoid form-control">
+                        <% var obj = contactAvoid.firstChoice; %>
+                        <% for (var option in obj) { %>
+                            <% var item = obj[option]; %>
+                            <option value="<%= item.value %>"<% if (item.selected == "yes") { %> selected<% } %>><%= item.display %></option>
+                        <% } %>
+                    </select>
+                </div>
+            </div>
+
+        </div>
+        <!-- Meeting Preferences -->
+        <h3>Meeting Preferences</h3>
+        <div class="row meeting-preferences profile-detail-border">
+            <!-- Best meeting day -->
+            <div class="col-sm-6 col-md-4">       
+                <div class="form-group text-left">
+                    <label>Your best day for meetings:</label><br />
+                    <select id="meetings-best-day" class="meeting-preferences form-control">
+                        <% var obj = meetingPrefs.bestDay; %>
+                        <% for (var option in obj) { %>
+                            <% var item = obj[option]; %>
+                            <option value="<%= item.value %>"<% if (item.selected == "yes") { %> selected<% } %>><%= item.display %></option>
+                        <% } %>
+                    </select>
+                </div>
+            </div>
+             <!-- Best meeting time -->
+            <div class="col-sm-6 col-md-4">
+                <div class="form-group text-left">
+                    <label>Your best time for meetings:</label><br />
+                    <select id="meetings-best-time" class="meeting-preferences form-control">
+                        <% var obj = meetingPrefs.bestTime; %>
+                        <% for (var option in obj) { %>
+                            <% var item = obj[option]; %>
+                            <option value="<%= item.value %>"<% if (item.selected == "yes") { %> selected<% } %>><%= item.display %></option>
+                        <% } %>
+                    </select>
+                </div>
+            </div>
+
+        </div>
+        <!-- Time Preferences -->
+        <h3>Time Preferences</h3>
+        <div class="row time-preferences profile-detail-border">
+            <!-- Arrival Time -->
+            <div class="col-md-4 text-left">
+                <label>Timewise, you typically arrive:</label><br />
+                <input id="time-arrive" class="time-update form-control" value="<%= timePrefs.arrive %>" />
+                <button id="time-arrive-btn" class="time-preference-update btn btn-warning hidden">Update</button>
+            </div>
+            <!-- Departure Time -->
+            <div class="col-md-4 text-left">
+                <label>Timewise, you typically leave:</label><br />
+                <input id="time-depart" class="time-update form-control" value="<%= timePrefs.depart %>" />
+                <button id="time-depart-btn" class="time-preference-update btn btn-warning hidden">Update</button>
+            </div>
+            <!-- Time Notes -->
+            <div class="col-md-4">
+                <label>Note:</label><br />
+                <input id="time-note" class="time-update form-control" value="<%= timePrefs.notes %>" />
+                <button id="time-note-btn" class="time-preference-update btn btn-warning hidden">Update</button>
+            </div>
+        </div>
+ 
+<% include profile-home-footer %>

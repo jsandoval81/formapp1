@@ -1,0 +1,160 @@
+/*******************/
+/** MEDIA QUERIES **/
+/*******************/
+@media (max-width: 1850px) {
+    .bg-canvas-1 h1 {
+        padding: 0 50px 0 0;
+    }
+}
+/** Generic 1599 **/
+@media (max-width: 1599px) {
+    .bg-canvas-1 {
+        height: 325px;
+        background-image: url('/ti/images/canvas1-1599.jpg');
+        color: #202020;
+    }
+    .bg-canvas-1 h1 {
+        padding: 0;
+    }
+}
+/** Generic 1399 **/
+@media (max-width: 1399px) {
+    .bg-canvas-1 {
+        height: 325px;
+        background-image: url('/ti/images/canvas1-1399.jpg');
+        color: #202020;
+    }
+    .bg-canvas-1 h1 {
+        padding: 0;
+    }
+}
+/** Generic 1279 **/
+@media (max-width: 1279px) {
+    .bg-canvas-1 {
+        height: 265px;
+        background-image: url('/ti/images/canvas1-1279.jpg');
+        color: #202020;
+    }
+    .bg-canvas-1 h1 {
+        margin: 0;
+        padding: 0 100px 0 0;
+        font-size: 3.7em;
+    }
+}
+/** Generic 1149 **/
+@media (max-width: 1149px) {
+    .bg-canvas-1 h1 {
+        margin: 0;
+        padding: 0;
+        font-size: 3.7em;
+    }
+}
+/** Generic 1024 **/
+@media (max-width: 1024px) {
+    .bg-canvas-1 {
+        height: 235px;
+        background-image: url('/ti/images/canvas1-1024.jpg');
+        color: #202020;
+    }
+    .bg-canvas-1 h1 {
+        margin: 0;
+        padding: 0 40px 0 0;
+        font-size: 3.2em;
+    }
+}
+/** Generic 991 **/
+@media (max-width: 991px) {
+    #profileUpdate .form-error-msg {
+        text-align: right;
+    }
+}
+/** Generic 767 **/
+@media (max-width: 767px) {
+    #profile-home-gravatar, #profile-home-info div {
+        text-align: left;
+    }
+    #admin-reset-user {
+        width: 100%;
+        text-align: left;
+    }
+    #admin-reset-user button, #admin-reset-user input {
+        margin-top: 5px;
+    }
+}
+/** Generic 750 **/
+@media (max-width: 750px) {
+    
+}
+/** Generic 450 **/
+@media (max-width: 450px) {
+    
+}
+/** iPad (portrait and landscape) **/
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px)  {
+    
+}
+/** iPad (landscape) **/
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : landscape) {
+    
+}
+/** iPad (portrait) **/
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : portrait) {
+    .bg-canvas-1 {
+        height: 171px;
+        background-image: url('/ti/images/canvas1-769.jpg');
+        color: #202020;
+    }
+    .bg-canvas-1 h1 {
+        margin: 0;
+        padding: 0 40px 0 0;
+        font-size: 2.8em;
+    }
+}
+/** iPad 3/4 Retina (portrait and landscape) **/
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (-webkit-min-device-pixel-ratio: 2) {
+
+}
+/** iPad 3/4 Retina (landscape) **/
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : landscape) and (-webkit-min-device-pixel-ratio: 2) {
+
+}
+/** iPad 3/4 Retina (portrait) **/
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : portrait) and (-webkit-min-device-pixel-ratio: 2) {
+
+}
+/** iPad 1/2 Non-Retina (portrait and landscape) **/
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (-webkit-min-device-pixel-ratio: 1) {
+
+}
+/** iPad 1/2 Non-Retina (landscape) **/
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : landscape) and (-webkit-min-device-pixel-ratio: 1)  {
+
+}
+/** iPad 1/2 Non-Retina (portrait) **/
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : portrait) and (-webkit-min-device-pixel-ratio: 1) {
+
+}
+/** iPhone 5 (portrait and landscape) **/
+@media only screen and (min-device-width : 320px) and (max-device-width : 568px) {
+
+}
+/** iPhone 5 (landscape) **/
+@media only screen and (min-device-width : 320px) and (max-device-width : 568px) and (orientation : landscape) {
+
+}
+/** iPhone 5 (portrait) **/
+@media only screen and (min-device-width : 320px) and (max-device-width : 568px) and (orientation : portrait) {
+
+}
+/** iPhone 2G-4S (portrait and landscape) **/
+@media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+    
+}
+/** iPhone 2G-4S (landscape) **/
+@media only screen and (min-device-width : 320px) and (max-device-width : 480px) and (orientation : landscape) {
+
+}
+/** iPhone 2G-4S (portrait) **/
+@media only screen and (min-device-width : 320px) and (max-device-width : 480px) and (orientation : portrait) {
+
+}

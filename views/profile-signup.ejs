@@ -1,0 +1,48 @@
+
+<% include header %>
+<% include navbar %>
+ 
+ 	 <!-- Main jumbotron -->
+    <div class="jumbotron bg-canvas-9">
+         <div class="container">
+    		<!--h1>This will be the profile signup</h1-->
+    	</div>   
+    </div>
+
+ 	<!-- Start container -->
+    <div class="container">
+        
+        <div class="col-sm-6">
+
+			<h1><span class="fa fa-sign-in"></span> Signup</h1>
+
+			<!-- Show any messages that come back with authentication -->
+			<% if (message.length > 0) { %>
+				<div class="alert alert-danger"><%= message %></div>
+			<% } %>
+
+			<!-- Signup Form -->
+			<form action="/ti/profiles/signup" method="post">
+				<div class="form-group">
+					<label>Email Address</label>
+					<input type="text" class="form-control" name="email" autofocus="autofocus" />
+				</div>
+				<div class="form-group">
+					<label>Choose a password</label>
+					<input type="password" class="form-control" name="password" />
+				</div>
+
+				<button type="submit" class="btn btn-warning btn-lg">Signup</button>
+				<div id="signup-legal">By signing up you agree to the standard <a href="/ti/about/howto/terms">terms and conditions</a></div>
+			</form>
+
+			<hr>
+			<!-- Login Link -->
+			<p>Already have an account? <a href="/ti/profiles/login">Login</a></p>
+
+		</div>
+    	
+    <!-- End container -->
+    </div>    
+ 
+<% include footer %>

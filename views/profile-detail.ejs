@@ -1,0 +1,148 @@
+
+
+<div class="modal">
+    <!-- Profile Detail Container -->
+    <div class="profile-detail">
+        <!-- Profile Detail Top Row -->
+        <div class="row profile-detail-row">
+            <div class="col-md-6 col-lg-3 vertical-center">
+                <img src="http://www.gravatar.com/avatar/<%= hashEmail %>?s=200&amp;d=mm" alt="gravatar" />
+            </div><!--
+            --><div class="col-md-6 col-lg-3 text-left vertical-center">
+                <div class="profile-detail-name"><%= profile.identity.name.first %> <%= profile.identity.name.last %></div>
+                <div class="profile-detail-role"><%= profile.identity.role %></div>
+            </div><!--
+            --><div class="col-md-12 col-lg-6 profile-detail-description vertical-center">
+                <% if (profile.identity.description) { %>&quot;<%= profile.identity.description %>&quot;<% } %>
+            </div>
+        </div>
+
+        <div class="row">
+            <!-- Profile Detail left column -->
+            <div class="col-md-6">
+                <% if (profile.strengths.department[0]) { %>
+                    <!-- Profile Team Strengths -->
+                    <div class="row profile-detail-row">
+                        <div class="col-sm-12">
+                            <strong><%= profile.identity.name.first %>'s strengths on the <%= profile.identity.team.department %> team:</strong>
+                            <div class="profile-detail-strength-list"><%= profile.strengths.department.join(", ") %></div>
+                        </div>
+                    </div>
+                <% } %>
+                <% if (profile.strengths.company[0]) { %>
+                    <!-- Profile Company Strengths -->
+                    <div class="row profile-detail-row">
+                        <div class="col-sm-12">
+                            <strong><%= profile.identity.name.first %>'s strengths at <%= profile.identity.team.company %>, beyond the <%= profile.identity.team.department %> team:</strong>
+                            <div class="profile-detail-strength-list"><%= profile.strengths.company.join(", ") %></div>
+                        </div>
+                    </div>
+                <% } %>
+                <% if (profile.strengths.other[0]) { %>
+                    <!-- Profile Other Strengths -->
+                    <div class="row profile-detail-row">
+                        <div class="col-sm-12">
+                            <strong>Other strengths:</strong>
+                            <div class="profile-detail-strength-list"><%= profile.strengths.other.join(", ") %></div>
+                        </div>
+                    </div>
+                <% } %>
+            </div>
+            <!-- Profile Detail right column -->
+            <div class="col-md-6">
+                <% if (profile.preferences.contact.help[0] || profile.preferences.contact.announcements[0] || profile.preferences.contact.brainstorm[0]) { %>
+                    <div class="row profile-detail-row">
+                        <div class="col-sm-12">
+                            <strong><%= profile.identity.name.first %>'s contact preferences for:</strong>
+
+                            <div class="row text-left profile-detail-border">
+                                <% if (profile.preferences.contact.help[0]) { %>
+                                    <!-- Profile Help Contact Preferences -->
+                                    <div class="col-sm-4">
+                                        <strong><em>Help requests:</em></strong>
+                                        <ol>
+                                            <% for (i = 0; i < profile.preferences.contact.help.length; i++) { %>
+                                                <li><%= profile.preferences.contact.help[i] %></li>
+                                            <% } %>
+                                        </ol>
+                                    </div>
+                                <% } %>
+
+                                <% if (profile.preferences.contact.announcements[0]) { %>
+                                    <!-- Profile Announcement Contact Preferences -->
+                                    <div class="col-sm-4">
+                                        <strong><em>Announcements:</em></strong>
+                                        <ol>
+                                            <% for (i = 0; i < profile.preferences.contact.announcements.length; i++) { %>
+                                                <li><%= profile.preferences.contact.announcements[i] %></li>
+                                            <% } %>
+                                        </ol>
+                                    </div>
+                                <% } %>
+
+                                <% if (profile.preferences.contact.brainstorm[0]) { %>
+                                    <!-- Profile Brainstorming Contact Preferences -->
+                                    <div class="col-sm-4">
+                                        <strong><em>Brainstorming:</em></strong>
+                                        <ol>
+                                            <% for (i = 0; i < profile.preferences.contact.brainstorm.length; i++) { %>
+                                                <li><%= profile.preferences.contact.brainstorm[i] %></li>
+                                            <% } %>
+                                        </ol>
+                                    </div>
+                                <% } %>
+
+                            </div>
+                        </div>
+                    </div>
+                <% } %>
+
+                <% if (profile.preferences.meetings.bestDay || profile.preferences.meetings.bestTime) { %>
+                    <div class="row profile-detail-row">
+                        <div class="col-sm-12">
+                            <strong><%= profile.identity.name.first %>'s meeting preferences:</strong>
+
+                            <div class="row text-center profile-detail-border">
+                                <% if (profile.preferences.meetings.bestDay) { %>
+                                    <!-- Profile Meeting Day Preferences -->
+                                    <div class="col-sm-6 text-right"><strong><em>Best day:</em></strong> <%= profile.preferences.meetings.bestDay %></div>
+                                <% } %>
+
+                                <% if (profile.preferences.meetings.bestTime) { %>
+                                    <!-- Profile Meeting Time Preferences -->
+                                    <div class="col-sm-6 text-left"><strong><em>Best time:</em></strong> <%= profile.preferences.meetings.bestTime %></div>
+                                <% } %>
+                            </div>
+                        </div>
+                    </div>
+                <% } %>
+
+                <% if (profile.preferences.officeHours.arrive || profile.preferences.meetings.bestTime) { %>
+                    <div class="row profile-detail-row">
+                        <div class="col-sm-12">
+                            <strong><%= profile.identity.name.first %>'s office hour preferences:</strong>
+                            
+                            <div class="row text-center profile-detail-border">
+                                <% if (profile.preferences.officeHours.arrive) { %>
+                                    <div class="col-sm-6 text-right"><strong><em>Arrive:</em></strong> <%= profile.preferences.officeHours.arrive %></div>
+                                <% } %>
+
+                                <% if (profile.preferences.officeHours.depart) { %>
+                                    <div class="col-sm-6 text-left"><strong><em>Depart:</em></strong> <%= profile.preferences.officeHours.depart %></div>
+                                <% } %>
+
+                                <% if (profile.preferences.officeHours.notes) { %>
+                                    <div class="col-sm-12 text-center"><strong><em>Note:</em></strong> <%= profile.preferences.officeHours.notes %></div>
+                                <% } %>
+                            </div>
+                        </div>
+                    </div>
+                <% } %>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>

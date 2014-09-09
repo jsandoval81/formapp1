@@ -1,0 +1,105 @@
+
+<% include profile-home-header %>
+
+            <div id="admin-values" class="row">
+                <!-- Admin form - Company list -->
+                <div class="col-md-4">
+                    <div class="row">
+                        <div class="col-xs-12"><h4>Company List</h4><hr /></div>
+                    </div>
+                    <% var obj = adminOptions.companies; %>
+                    <% for (var option in obj) { %>
+                    <% var item = obj[option]; %>
+                    <div class="row">
+                        <div class="col-xs-8 vertical-center"><%= item.display %></div><!--
+                        --><div class="col-xs-4 vertical-center"><div id="company-delete-<%= item.value %>" class="admin-delete btn btn-link">Delete</div></div>
+                    </div>
+                    <% } %>
+                    <div class="row">
+                        <div class="col-xs-12"><hr /><label>Add a new Company</label></div>
+                        <div class="col-xs-12">
+                            <input type="text" id="add-company-input" class="form-control" style="display: inline; max-width: 70%;" />
+                            <button id="add-company-btn" class="admin-update btn btn-warning">Add</button>
+                            <div id="add-company-msg"></div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Admin form - Department list -->
+                <div class="col-md-4">
+                    <div class="row">
+                        <div class="col-xs-12"><h4>Team List</h4><hr /></div>
+                    </div>
+                    <% var obj = adminOptions.departments; %>
+                    <% for (var option in obj) { %>
+                    <% var item = obj[option]; %>
+                    <div class="row">
+                        <div class="col-xs-8 vertical-center"><%= item.display %></div><!--
+                        --><div class="col-xs-4 vertical-center"><div id="department-delete-<%= item.value %>" class="admin-delete btn btn-link">Delete</div></div>
+                    </div>
+                    <% } %>
+                    <div class="row">
+                        <div class="col-xs-12"><hr /><label>Add a new Team</label></div>
+                        <div class="col-xs-12">
+                            <input type="text" id="add-department-input" class="form-control" style="display: inline; max-width: 70%;" />
+                            <button id="add-department-btn" class="admin-update btn btn-warning">Add</button>
+                            <div id="add-department-msg"></div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Admin form - Preferences Contact Types list -->
+                <div class="col-md-4">
+                    <div class="row">
+                        <div class="col-xs-12"><h4>Contact Type List</h4><hr /></div>
+                    </div>
+                    <% var obj = adminOptions.contactTypes; %>
+                    <% for (var option in obj) { %>
+                    <% var item = obj[option]; %>
+                    <div class="row">
+                        <div class="col-xs-8 vertical-center"><%= item.display %></div><!--
+                        --><div class="col-xs-4 vertical-center"><div id="contact-type-delete-<%= item.value %>" class="admin-delete btn btn-link">Delete</div></div>
+                    </div>
+                    <% } %>
+                    <div class="row">
+                        <div class="col-xs-12"><hr /><label>Add a new Contact Type</label></div>
+                        <div class="col-xs-12">
+                            <input type="text" id="add-contact-type-input" class="form-control" style="display: inline; max-width: 70%;" />
+                            <button id="add-contact-type-btn" class="admin-update btn btn-warning">Add</button>
+                            <div id="add-contact-type-msg"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Admin form - User list -->
+            <div id="user-list" class="row">
+                <div class="col-xs-12">
+                    <div class="row">
+                        <div class="col-xs-12"><h4>User List</h4><hr /></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-4 col-sm-3 text-left"><h5><strong>Name</strong></h5></div>
+                        <div class="col-xs-4 col-sm-3 text-left"><h5><strong>Company</strong></h5></div>
+                        <div class="col-sm-3 hidden-xs text-left"><h5><strong>Email</strong></h5></div>
+                        <div class="col-xs-4 col-sm-3 text-left"><h5><strong>Actions</strong></h5></div>
+                    </div>
+                    <% for (var user = 0; user < userList.length; user += 1) { %>
+                    <div class="row">
+                           <div class="col-xs-4 col-sm-3 text-left vertical-center">
+                                <span class="hidden-xs"><img src="http://www.gravatar.com/avatar/<%= userList[user].hashEmail %>?s=30&amp;d=mm" alt="Profile Picture"  /></span>
+                                <span><%= userList[user].name %></span>
+                           </div><!--
+                        --><div class="col-xs-4 col-sm-3 text-left vertical-center"><%= userList[user].company %></div><!--
+                        --><div class="col-sm-3 hidden-xs text-left vertical-center">
+                                <a href="mailto:<%= userList[user].email %>?subject=A%20message%20from%20the%20Ti%20Administrators"><%= userList[user].email %></a>
+                           </div><!--
+                        --><div class="col-xs-4 col-sm-3 text-left vertical-center">
+                                <div id="admin-user-<%= userList[user].id %>" class="admin-user btn btn-link">View Details</div>
+                           </div>
+                    </div>
+                    <% } %>
+                </div>
+            </div>
+
+            <div id="modal-content"></div>
+
+<% include profile-home-footer %>

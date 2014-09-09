@@ -1,0 +1,34 @@
+#!/usr/bin/env node
+var debug = require('debug')('ti');
+var app   = require('../app');
+
+app.set('port', process.env.PORT || 3100);
+
+var server = app.listen(app.get('port'), function () {
+    "use strict";
+    console.log('Express server listening on port ' + server.address().port);
+});
+
+/** HTTPS **/
+/* This should be all that is necessary once SSL certs are in place
+
+var fs = require('fs'),
+    http = require('http'),
+    https = require('https');
+
+var options = {
+	key: fs.readFileSync('/home/ec2-user/key.pem'),
+	cert: fs.readFileSync('/home/ec2-user/cert.pem'),
+	ca: fs.readFileSync('/home/ec2-user/ca.pem')
+
+	-OR-
+
+    key: fs.readFileSync('./ssl/privatekey.pem'),
+    cert: fs.readFileSync('./ssl/certificate.pem'),
+};
+
+var server = https.createServer(options, app).listen(app.get('port'), function(){
+  console.log('Express server listening on port ' + server.address().port);
+});
+
+*/

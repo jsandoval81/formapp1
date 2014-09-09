@@ -1,0 +1,12 @@
+
+	<% if (strengthSummary[0]) { %>
+    <div id="profile-summary">
+
+        <div id="summary-wordcloud">
+            <% for (i = 0; i < strengthSummary.length; i++) { %>
+                <span data-weight="<%= strengthSummary[i].weight %>"><%= strengthSummary[i].display %></span>
+            <% } %>
+        </div>
+        
+    </div>
+    <% } %>

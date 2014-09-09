@@ -1,0 +1,528 @@
+
+/*********************/
+/** UTILITY CLASSES **/
+/*********************/
+/** VERTICAL ALIGN **/
+.vertical-center {
+    display: inline-block;
+    vertical-align: middle;
+    float: none;
+}
+/** TEXT BLOCK **/
+.text-block {
+    margin: 30px 0;
+}
+/** MARQUEE TEXT **/
+.marquee {
+    margin-bottom:15px;
+    font-size:21px;
+    font-weight:200
+}
+
+/*********************************/
+/** GLOBAL APPLICATION ELEMENTS **/
+/*********************************/
+.logo-text {
+    margin: auto 10px auto 0;
+    padding: 0;
+    line-height: 50px;
+}
+/** LOGIN OPTIONS CONTAINER **/
+#login-options {
+    margin: 40px 0;
+}
+/** SIGNUP LEGALESE **/
+#signup-legal {
+    margin: 5px 0 0 0;
+    font-size: 9px;
+    font-style: italic;
+}
+/** INITIAL FILTER TEXT **/
+#initial-filter-text {
+    display: none;
+}
+/** INVALID FILTER TEXT **/
+#invalid-filter-text {
+    display: none;
+}
+/** UPDATE PROFILE BUTTON **/
+#update-profile-btn {
+    float: right;
+}
+/** FILTER CONTAINERS **/
+.filter-container {
+    float: left;
+    margin-right: 20px;
+}
+/** FILTER CONTAINER <SELECT> ELEMENTS **/
+.filter-container select {
+    width: auto;
+}
+/** FILTER SPACER **/
+.filter-spacer {
+    clear: both;
+    height: 20px;
+}
+/** ERROR MESSAGE CONTAINER **/
+.error-container {
+    margin-top: 100px;
+}
+/** WEB PAGE FOOTER **/
+footer.ti-footer {
+    display: block;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 40px;
+    border-top: 1px solid #D5D5D5;
+    background-color: #F5F5F5;
+    text-align: center;
+    line-height: 40px;
+    z-index: 10001;
+}
+footer.ti-footer-placehoder {
+    display: block;
+    position: relative;
+    width: 100%;
+    height: 40px;
+    background-color: #FFFFFF;
+    border: 0;
+}
+
+/***********************/
+/** CANVAS JUMBOTRONS **/
+/***********************/
+.bg-canvas-1 {
+    height: 325px;
+    background-image: url('/ti/images/canvas1.jpg');
+    color: #202020;
+}
+.bg-canvas-1 h1 {
+    padding-right: 200px;
+}
+.bg-canvas-2 {
+    height: 200px;
+    background-image: url('/ti/images/canvas2.jpg');
+    background-position: left center;
+    color: #FFFFFF;
+}
+.bg-canvas-3 {
+    height: 200px;
+    background-image: url('/ti/images/canvas3.jpg');
+    background-position: left center;
+    color: #FFFFFF;
+}
+.bg-canvas-4 {
+    height: 200px;
+    background-image: url('/ti/images/canvas4.jpg');
+    background-position: left center;
+    color: #FFFFFF;
+}
+.bg-canvas-5 {
+    height: 200px;
+    background-image: url('/ti/images/canvas5.jpg');
+    background-position: left center;
+    color: #FFFFFF;
+}
+.bg-canvas-6 {
+    height: 200px;
+    background-image: url('/ti/images/canvas6.jpg');
+    background-position: left center;
+    color: #FFFFFF;
+}
+.bg-canvas-7 {
+    height: 200px;
+    background-image: url('/ti/images/canvas7.jpg');
+    background-position: left top;
+    color: #FFFFFF;
+}
+.bg-canvas-8 {
+    height: 200px;
+    background-image: url('/ti/images/canvas8.jpg');
+    background-position: left center;
+    color: #FFFFFF;
+}
+.bg-canvas-9 {
+    height: 200px;
+    background-image: url('/ti/images/canvas9.jpg');
+    background-position: left center;
+    color: #FFFFFF;
+}
+.bg-canvas-10 {
+    height: 200px;
+    background-image: url('/ti/images/canvas10.jpg');
+    background-position: left center;
+    color: #FFFFFF;
+}
+
+/*******************/
+/** PROFILES LIST **/
+/*******************/
+/** PROFILE LIST ITEM **/
+.profile-item {
+    height: 100px;
+    margin: 0 0 10px 0;
+    padding: 10px;
+    clear: both;
+    background-color: #E5E5E5;
+    border-radius: 10px;
+    text-align: left;
+}
+.profile-item:hover {
+    background-color: #F5F5F5;
+    border: 1px solid #D5D5D5;
+    cursor: pointer;
+}
+/** PROFILE LIST ITEM - GRAVATAR **/
+.profile-item-gravatar {
+    display: inline-block;
+    width: 10%;
+    vertical-align: middle;
+    text-align: center;
+    overflow: hidden;
+}
+/** PROFILE LIST ITEM - INFO BLOCKS **/
+.profile-item-info-left {
+    display: inline-block;
+    width: 20%;
+    vertical-align: middle;
+    text-align: left;
+}
+.profile-item-info-middle {
+    display: inline-block;
+    width: 20%;
+    vertical-align: top;
+    text-align: left;
+}
+.profile-item-info-right {
+    display: inline-block;
+    width: 45%;
+    height: 100%;
+    vertical-align: top;
+    text-align: center;
+}
+/** PROFILE LIST ITEM - NAME **/
+.profile-item-name {
+    width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-weight: bold;
+}
+/** PROFILE LIST ITEM - ROLE **/
+.profile-item-role {
+    width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-weight: normal;
+    font-style: italic;
+}
+/** PROFILE LIST ITEM - BEST MEETING DAY **/
+.profile-item-mday {
+    width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-weight: normal;
+    font-size: 12px;
+    padding: 0 0 10px 0;
+}
+/** PROFILE LIST ITEM - BEST MEETING TIME **/
+.profile-item-mtime {
+    width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-weight: normal;
+    font-size: 12px;
+    padding: 0 0 10px 0;
+}
+/** PROFILE LIST ITEM - BEST HELP CONTACT **/
+.profile-item-help {
+    width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-weight: normal;
+    font-size: 12px;
+    padding: 0 0 10px 0;
+}
+/** PROFILE LIST ITEM - STRENGTHS **/
+.profile-item-strengths {
+    width: 100%;
+    height: 100%;
+    /*white-space: nowrap;*/
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-weight: normal;
+    text-align: left;
+    padding: 10px;
+    border: 1px solid #D5D5D5;
+    background-color: #F5F5F5;
+    border-radius: 10px;
+}
+
+/********************/
+/** PROFILE DETAIL **/
+/********************/
+/** PROFILE DETAIL - MODAL WINDOW **/
+.modal {
+    padding: 10px;
+    background-color: #F9F9F9;
+    text-align: center;
+}
+/** PROFILE DETAIL - LAYOUT ROW **/
+.profile-detail-row {
+    width: 95%;
+    margin: 10px auto;
+}
+/** PROFILE DETAIL - BORDER ROW **/
+.profile-detail-border {
+    border: 1px solid #D5D5D5;
+    border-radius: 10px;
+    margin: 0 0 10px 0;
+    padding: 10px;
+    background-color: #F5F5F5;
+}
+/** PROFILE DETAIL - NAME **/
+.profile-detail-name {
+    margin-bottom: 10px;
+    font-size: 20px;
+    font-weight: bold;
+}
+/** PROFILE DETAIL - COMPANY, DEPARTMENT, ROLE **/
+.profile-detail-company, .profile-detail-department, .profile-detail-role {
+    font-style: italic;
+}
+/** PROFILE DETAIL - DESCRIPTION **/
+.profile-detail-description {
+    font-size: 18px;
+    font-style: italic;
+}
+/** PROFILE DETAIL - STRENGTH LIST **/
+.profile-detail-strength-list {
+    height: 60px;
+    word-wrap: break-word;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    border: 1px solid #D5D5D5;
+    background-color: #F5F5F5;
+    border-radius: 10px;
+    margin: 0 auto;
+    padding: 0 10px;
+    text-align: left;
+}
+
+/*********************/
+/** SUMMARY REPORTS **/
+/*********************/
+#summary-wordcloud {
+    width: 100%;
+    height: 550px;
+    margin: 0 auto;
+}
+
+/**************************/
+/** ABOUT (HELP) SECTION **/
+/**************************/
+/** ACCORDION TOGGLE - CONTAINER **/
+#about-accordion-toggle {
+    height: 20px;
+    text-align: right;
+    font-weight: bold;
+}
+/** ACCORDION TOGGLE - INITIAL STATE **/
+#about-accordion-enable {
+    display: none;
+}
+/** HIDE HELP UNTIL DONE LOADING **/
+#about-main-text {
+    display: none;
+}
+/** ACCORDION - SUB **/
+.ui-accordion-sub {
+    margin: 0;
+    padding: 0 0 0 25px;
+}
+
+/*********************/
+/** PROFILE MANAGER **/
+/*********************/
+/** PROFILE MANAGER - LOGIN START **/
+#login-options a {
+    margin-bottom: 5px;
+}
+/** PROFILE MANAGER - NAVBAR **/
+#profile-navbar {
+    margin-bottom: 10px;
+}
+/** PROFILE MANAGER - UPDATE FORM **/
+#profileUpdate .form-control {
+    width: 100%;
+}
+#profileUpdate button, #profileUpdate a {
+    margin-top: 10px;
+}
+#profileUpdate .form-error-msg em {
+    color: red;
+}
+#department-error div {
+    font-size: 12px;
+    line-height: 13px;
+    text-align: right;
+    color: #000000;
+}
+/** PROFILE MANAGER - STRENGTHS INPUTS **/
+#tag-box-container {
+    display: none;
+}
+div.tagsinput {
+    border: 1px solid #D5D5D5;
+    background-color: #F5F5F5;
+    border-radius: 10px;
+}
+/** PROFILE MANAGER - PREFERENCES INPUTS **/
+.contact-preferences {
+    display: inline;
+    width: 150px;
+}
+.meeting-preferences select {
+    display: inline;
+    width: 150px;
+}
+.time-preferences input {
+    display: inline;
+    /*width: 250px;*/
+}
+/** PROFILE MANAGER - LOGIN ACCOUNTS **/
+.profile-linked-account {
+    position: relative;
+    margin-bottom: 25px;
+    min-height: 180px;
+    word-wrap: break-word;
+    overflow: hidden;
+}
+/** PROFILE MANAGER - LOGIN ACCOUNT MASKS **/
+.profile-account-mask {
+    position: absolute;
+    top: -200px;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    font-size: 500px;
+    opacity: 0.07;
+    z-index: 1;
+}
+/** PROFILE MANAGER - LOGIN ACCOUNT BUTTONS **/
+.profile-linked-account a {
+    position: absolute;
+    bottom: 8px;
+    left: 8px;
+    z-index: 2;
+}
+/** PROFILE MANAGER - LOGOUT BUTTON **/
+#logout {
+    margin-top: 20px;
+}
+
+/****************************/
+/** PROFILE ADMINISTRATION **/
+/****************************/
+/** ADMIN USER DETAIL - LOGIN ACCOUNT ROWS **/
+#admin-user-logins .row:hover {
+    background-color: #F9F9F9;
+}
+/** ADMIN USER DETAIL - LOGIN ACCOUNT ICONS **/
+.admin-login-account {
+    margin: 1px 0;
+    border-radius: 2px;
+}
+/** ADMIN USER DETAIL - PASSWORD RESET FORM **/
+#admin-reset-user {
+    display: none;
+    width: 65%;
+}
+/** ADMIN USER DETAIL - PASSWORD RESET MESSAGE CONTAINER **/
+#admin-reset-msg {
+    font-weight: bold;
+}
+/** ADMIN USER DETAIL - PASSWORD RESET SUCCESS MESSAGE **/
+#admin-reset-success {
+    color: green;
+}
+/** ADMIN USER DETAIL - PASSWORD RESET ERROR MESSAGE **/
+#admin-reset-error {
+    color: red;
+}
+/** ADMIN USER DETAIL - USER REMOVAL FORM **/
+#admin-remove-user {
+    display: none;
+}
+/** ADMIN USER DETAIL - USER REMOVAL WARNING TEXT **/
+#admin-remove-info {
+    padding: 10px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+/*******************************/
+/** SOCIAL INTEGRATION STYLES **/
+/*******************************/
+/** LOCAL LOGIN **/
+.fa-user-text {
+    color: #000000;
+}
+/** LINKEDIN **/
+.fa-linkedin-text {
+    color: #007bb6;
+}
+.fa-linkedin-btn {
+	color: #FFFFFF;
+    background: #007bb6;
+}
+.fa-linkedin-btn:hover {
+	color: #FFFFFF;
+    background: #00547D;
+}
+/** GOOGLE PLUS **/
+.fa-google-plus-text {
+    color: #dd4b39;
+}
+.fa-google-plus-btn {
+	color: #FFFFFF;
+    background: #dd4b39;
+}
+.fa-google-plus-btn:hover {
+	color: #FFFFFF;
+    background: #A82718;
+}
+/** FACEBOOK **/
+.fa-facebook-text {
+    color: #3b5998;
+} 
+.fa-facebook-btn {
+	color: #FFFFFF;
+    background: #3b5998;
+}
+.fa-facebook-btn:hover {
+	color: #FFFFFF;
+    background: #284175;
+}
+/** TWITTER **/
+.fa-twitter-text {
+    color: #00aced;
+}
+.fa-twitter-btn {
+	color: #FFFFFF;
+    background: #00aced;
+}
+.fa-twitter-btn {
+	color: #FFFFFF;
+    background: #00aced;
+}
+
+
+
+

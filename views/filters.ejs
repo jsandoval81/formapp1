@@ -1,0 +1,45 @@
+                
+            <div id="profile-filters">
+
+                <!-- Initial filter instruction -->
+                <div id="initial-filter-text">
+                    <strong>Select a Company and Team to see profiles!</strong>
+                </div>
+
+                <!-- Invalid filter response -->
+                <div id="invalid-filter-text">
+                    <strong>No profiles matched the selected criteria</strong>
+                </div>
+
+                <!-- Update profile button -->
+                <div id="update-profile-btn">
+                    <a href="/ti/profiles/home" class="btn btn-default">Update my Profile</a>
+                </div>
+
+                <!-- Company filter -->
+                <div id="company-filter-container" class="filter-container">
+                    <label>Select Company:</label>
+                    <select id="company-filter" name="company-filter" class="form-control">
+                        <% var obj = filterSelections.companies; %>
+                        <% for (var option in obj) { %>
+                            <% var item = obj[option]; %>
+                            <option value="<%= item.value %>"<% if (item.selected == "yes") { %> selected<% } %>><%= item.display %></option>
+                        <% } %>
+                    </select>
+                </div>
+
+                <!-- Team filter -->
+                <div id="team-filter-container" class="filter-container">
+                    <label>Select Team:</label>
+                    <select id="team-filter" name="team-filter" class="form-control">
+                        <% var obj = filterSelections.departments; %>
+                        <% for (var option in obj) { %>
+                            <% var item = obj[option]; %>
+                            <option value="<%= item.value %>"<% if (item.selected == "yes") { %> selected<% } %>><%= item.display %></option>
+                        <% } %>
+                    </select>
+                </div>
+
+                <div class="filter-spacer"></div>
+
+            </div>

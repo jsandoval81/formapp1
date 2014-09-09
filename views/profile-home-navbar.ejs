@@ -1,0 +1,12 @@
+        <!-- Profile nav bar -->
+        <div id="profile-navbar" class="container">
+            <ul class="nav nav-tabs" id="profile-menu">
+                <li id="profile-home"><a href="/ti/profiles/home">Profile Home</a></li>
+                <li id="profile-strengths"><a href="/ti/profiles/strengths">Stengths</a></li>
+                <li id="profile-preferences"><a href="/ti/profiles/preferences">Preferences</a></li>
+                <li id="profile-logins"><a href="/ti/profiles/logins">Profile Logins</a></li>
+                <% if (isAdmin) { %>
+                <li id="profile-admin"><a href="/ti/profiles/administrator">Administration</a></li>
+                <% } %>
+            </ul>
+        </div>
