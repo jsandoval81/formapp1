@@ -45,7 +45,7 @@ module.exports = function(grunt) {
                 files: ['public/stylesheets/*.css', '!public/stylesheets/application.css', '!public/stylesheets/application.min.css'],
                 tasks: ['concat:css', 'cssmin'],
                 options: {
-                    spawn: false
+                    spawn: true
                 }
             },
             //== Rebuild the JS min file after JS edits
@@ -53,8 +53,12 @@ module.exports = function(grunt) {
                 files: ['public/javascripts/*.js', '!public/javascripts/application.js', '!public/javascripts/application.min.js'],
                 tasks: ['concat:js', 'uglify'],
                 options: {
-                    spawn: false
+                    spawn: true
                 }
+            },
+            livereload: {
+                options: { livereload: true },
+                files: ['public/ti/**/*', 'views/*.ejs', 'views/*.html']
             }
         },
 

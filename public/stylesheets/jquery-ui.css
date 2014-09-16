@@ -205,6 +205,9 @@
 	left: 0;
 	cursor: default;
 }
+.ui-link {
+	color: #428bca !important;
+}
 .ui-button {
 	display: inline-block;
 	position: relative;

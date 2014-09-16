@@ -2,8 +2,22 @@
             
         <div class="text-block">
             <ul>
-                <li>HTTPS</li>
-                <li>Graphs and charts</li>
+                <li>
+                    <strong>HTTPS</strong>
+                    <ul>
+                        <li>
+                            This isn't a major effort in terms of implementation. It involves procuring SSL certs, updating the Express server config, and configuring the ports on AWS and the NGINX reverse proxy. Most of the effort will come in the form of regression testing.
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <strong>Graphs and charts</strong>
+                    <ul>
+                        <li>
+                            The Summary page could definitely benefit from some basic charts relating to overall team strengths and preferences. Highcharts.js is my favorite at this point; it just takes pure JSON and can be configured to output all types of slick charts and graphs. It has nice interactivity features as well.
+                        </li>
+                    </ul>
+                </li>
             </ul>
         </div>
 

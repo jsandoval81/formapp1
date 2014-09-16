@@ -7,7 +7,7 @@
             <h3>The Basics</h3>
             <div id="architecture-basics">
                 <p>
-                    This application is written entirely in <strong>JavaScript</strong>, using <strong>Node.js</strong> on the server side. I’ve always enjoyed the good parts of JavaScript; and Node.js had been calling to me for quite some time. It’s ultra-light, ultra-fast, and the non-blocking/async nature does not carry a huge learning curve (in my opinion). 
+                    This application is written entirely in <strong>JavaScript</strong>, using <strong>Node.js</strong> and <strong>Express</strong> on the server side. I’ve always enjoyed the good parts of JavaScript; and Node.js had been calling to me for quite some time. It’s ultra-light, ultra-fast, and the non-blocking/async nature does not carry a huge learning curve (in my opinion). 
                 </p>
                 <p>
                     All apps need a place to live. For this application I went with a <strong>Linux</strong> instance of <strong>Amazon EC2</strong>, with a corresponding <strong>S3</strong> instance for data storage. So far I have no regrets with this choice. The admin interface, including port management is pretty straightforward.
@@ -29,7 +29,7 @@
                 <ul>
                     <li>
                         <strong>MongoDB</strong><br />
-                        I've worked a lot in the reporting and RDBMS realm, so MongoDB is <em>very</em> intriguing. It’s a document-based data store that uses very little overhead, completely ignores tradtional row-based “schemas”, and stores data in JSON-like collections. For JavaScript developers it offers an intuitive approach and reinforces the full JavaScript stack. For traditional RDBMS folks it can be another resource in the tool belt, especially for big data.
+                        I've worked a lot in the reporting and RDBMS realm, so MongoDB is <em>very</em> intriguing. It’s a document-based data store that uses very little overhead, completely ignores tradtional row-based “schemas”, and stores data in JSON-like collections. For JavaScript developers it offers an intuitive approach and reinforces the full JavaScript stack.
                     </li>
                     <li>
                         <strong>Express.js</strong><br />
@@ -37,22 +37,24 @@
                     </li>
                     <li>
                         <strong>Angular.js</strong><br />
-                        .... I actually didn't use this... yet. It’s very robust and powerful, essentially letting you build out a front-end framework specific to your app. I’m still learning it on some other projects. For this app, I chose to go with the <strong>EJS</strong> template engine instead (making this a “MEEN” stack). I wasn’t fond of EJS at first. But once I got my &quot;includes&quot; all sorted out it was much better. Angular is the one I’m focused on moving forward, but I would also like to check out Backbone.js and Handlebars.js. They each seem like they would be useful in different scenarios.
+                        .... I actually didn't use this... yet. It’s very robust and powerful, essentially letting you build out a front-end framework specific to your app. I’m using it on some newer projects and I'm VERY excited about it. For this app, I just went with <strong>EJS</strong> - a basic template engine (making this a “MEEN” stack). Angular is what I’m focused on moving forward - and I can still use template engines like EJS or Swig inside of an Angular front end.
                     </li>
                 </ul>
 
                 <p>
-                    <em>Note:</em> The MEAN stack, particularly Node.js, is not a slam-dunk approach by any stretch for all enterprise-caliber web applications. Node is non-blocking and running any blocking tasks begins to decrease Node's efficiency exponentially. This particular application, while employing a full spectrum of enterprise tactics, is by no means the only or best use of Node. Node has several other highly effective uses.
+                    <h6>
+                        <em>Note:</em> The MEAN stack, particularly Node.js, is not a slam-dunk approach by any stretch for all enterprise-caliber web applications. Node is non-blocking and running any blocking tasks begins to decrease Node's efficiency exponentially. This particular application, while employing a full spectrum of enterprise tactics, is by no means the only or best use of Node. Node has many other highly effective uses.
+                    </h6>
                 </p>
             </div>
 
             <h3>MVC Pattern</h3>
             <div id="architecture-mvc">
                 <p>
-                    MVC stands for model-view-controller. It is a sweeping trend in application design that, among other things, allows for a high degree of &quot;separation of concerns.&quot; There are several MVx patterns, but MVC is a good starting point. 
+                    MVC stands for model-view-controller. It is a sweeping trend in application design that, among other things, allows for a high degree of &quot;separation of concerns.&quot; There are several MVx patterns, but MVC is a good starting point. It is a pattern that can be used with server-side APIs and front-end frameworks alike.
                 </p>
                 <p>
-                    The <em>model</em> is essentially our data, the <em>view</em> is essentially our interface, and the <em>controller</em> is essentially the layer of logic that communicates with the other two. I say “essentially” a lot because there are a lot of takes on MVC, depending on the application type. I’ve enjoyed how it lets me work on a single part of the architecture at a time. Of course no architecture is completely compartmentalized, but certain maintenance and refactoring tasks are significantly reduced with a pattern like MVC. One of the best things about it (for me) is that it taught me how to separate my JavaScript in to more effective modules.
+                    The <em>model</em> is your data, the <em>view</em> is your interface, and the <em>controller</em> is your application logic. I enjoy how it lets me work on a single part of the architecture at a time. Also, maintenance and refactoring tasks are significantly reduced with a pattern like MVC. One of the best things about it from a JavaScript perspective is that it taught me how to separate my code in to more effective modules.
                 </p>
             </div>
 
@@ -74,19 +76,19 @@
                         A driver for MongoDB that provides quite a bit of abstraction when you want it, while still not interfering with most native MongoDB commands.
                     </li>
                     <li>
-                        <strong>Promises.js</strong><br />
-                        This was useful for some of my MongoDB queries from Node/Express. Since Node is non-blocking async, promises were a clean way to keep things things pipelined using the single-threaded environment.
+                        <strong>node-promise</strong><br />
+                        This was useful for some of my MongoDB queries from Node/Express. Since Node is non-blocking async, promises were a clean way to keep things things pipelined using the single-threaded environment. I went with this because it was Node-specific; however a library like Q would have also worked.
                     </li>
                     <li>
                         <strong>MD5 Hasher</strong><br />
-                        This NPM package came in very handy for quickly hashing emails and passwords.
+                        This NPM package came in very handy for quickly hashing emails for Gravatar (bcrypt with Blowfish is still used for passwords).
                     </li>
                     <li>
                         <strong>Twitter Bootstrap</strong><br />
                         This is an HTML/CSS/JavaScript framework that is extremely valuable when wiring up quick and attractive front-ends. The learning curve is minimal and the grid layout suits most applications.
                     </li>
                     <li>
-                        <strong>JQuery</strong><br />
+                        <strong>jQuery</strong><br />
                         A well-known micro-framework for JavaScript and a favorite of many front-end developers. I used it only on the front-end for this project, though I am anxious to see how it can help me on the server-side in the future.
                     </li>
                     <li>
@@ -99,7 +101,7 @@
             <h3>Source Control</h3>
             <div id="architecture-scm">
                 <p>
-                    <strong>Git</strong> along with <strong>Github</strong> makes a pretty ubiquitous choice. So far I've just used Git on the command line. It's simple and clean - especially for a one-man app like this one. 
+                    <strong>Git</strong> along with <strong>Github</strong> makes a pretty ubiquitous choice. So far I've just used Git on the command line. It's simple and clean - especially for a one-man app like this one. Visit the Github repo at <a href="https://github.com/jsandoval81/ti" class="ui-link" target="_blank">github.com/jsandoval81/ti</a>.
                 </p>
             </div>
 
@@ -111,6 +113,10 @@
 
                 <p>
                     I typically prefer the <strong>Behavior-Driven Development</strong> approach, though the libraries I've listed are extremely common and also support TDD. In the end, it takes a host of these libraries to test the full stack from Mongoose models, server functions, HTTP, and DOM. There are also some fringe libraries that I would like to incorporate in the future, such as Gremlins.js, which basically tries to rip a site apart.
+                </p>
+
+                <p>
+                    I've seen quite a few folks have success with Karma for MEAN stack testing. I like the prospect of all the Karma browser packages. That will likely be integrated into my next project(s).
                 </p>
             </div>
 

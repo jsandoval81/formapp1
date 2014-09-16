@@ -22,8 +22,8 @@ function isLoggedIn(req, res, next) {
         //== If user is authenticated in the session then carry on 
         return next();
     }
-    //== If is not autenticated then redirect them to the profile start page
-    res.redirect('/ti/profiles/start');
+    //== If is not autenticated then redirect them to the profile login page
+    res.redirect('/ti/profiles/login');
 }
 
 //== Make sure a user is logged in as Administrator
@@ -59,7 +59,7 @@ function isLoggedInAdmin(req, res, next) {
         });
     //== If they aren't even authenticated then redirect them to the login page
     } else {
-        res.redirect('/ti/profiles/start');
+        res.redirect('/ti/profiles/login');
     }
 }
 
@@ -92,15 +92,13 @@ module.exports.initialize = function (app, passport) {
     app.get('/about', about.index);
     app.get('/about/inspiration', about.inspiration);
     app.get('/about/howto', about.howto);
-    app.get('/ti/about/howto/:section', about.howto);
+    app.get('/about/howto/:section', about.howto);
     app.get('/about/architecture', about.architecture);
     app.get('/about/future', about.future);
 
     //========================
     //== Profile Management ==
     //========================
-    //== Login Select
-    app.get('/profiles/start', profiles.profileStart);
     //== Profile Dashboard Home
     app.get('/profiles/home', isLoggedIn, profiles.profileHomeScreen);
     app.get('/profiles/home/update', isLoggedIn, profiles.profileHomeUpdateScreen);
@@ -120,9 +118,9 @@ module.exports.initialize = function (app, passport) {
     app.put('/profiles/administrator', isLoggedInAdmin, profiles.profileAdministratorTry);
     app.post('/profiles/administrator/user', isLoggedInAdmin, profiles.profileAdministratorUser);
 
-    //===========================
-    //== Profile Autentication ==
-    //===========================
+    //============================
+    //== Profile Authentication ==
+    //============================
     //== Local Login
     app.get('/profiles/login', profiles.localLoginScreen);
     app.post('/profiles/login', profiles.localLoginTry);
@@ -162,7 +160,7 @@ module.exports.initialize = function (app, passport) {
     //== Google Unlink
     app.get('/profiles/unlink/google', profiles.unlinkGoogle);
 
-    /** Logout **/
+    //== Logout
     app.get('/profiles/logout', profiles.logOut);
 
 //===============================================
@@ -199,8 +197,6 @@ module.exports.initialize = function (app, passport) {
     //========================
     //== Profile Management ==
     //========================
-    //== Login Select
-    app.get('/ti/profiles/start', profiles.profileStart);
     //== Profile Dashboard Home
     app.get('/ti/profiles/home', isLoggedIn, profiles.profileHomeScreen);
     app.get('/ti/profiles/home/update', isLoggedIn, profiles.profileHomeUpdateScreen);
@@ -220,9 +216,9 @@ module.exports.initialize = function (app, passport) {
     app.put('/ti/profiles/administrator', isLoggedInAdmin, profiles.profileAdministratorTry);
     app.post('/ti/profiles/administrator/user', isLoggedInAdmin, profiles.profileAdministratorUser);
 
-    //===========================
-    //== Profile Autentication ==
-    //===========================
+    //============================
+    //== Profile Authentication ==
+    //============================
     //== Local Login
     app.get('/ti/profiles/login', profiles.localLoginScreen);
     app.post('/ti/profiles/login', profiles.localLoginTry);
@@ -262,7 +258,7 @@ module.exports.initialize = function (app, passport) {
     //== Google Unlink
     app.get('/ti/profiles/unlink/google', profiles.unlinkGoogle);
 
-    /** Logout **/
+    //== Logout
     app.get('/ti/profiles/logout', profiles.logOut);
 
 };

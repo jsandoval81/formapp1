@@ -205,6 +205,9 @@
 	left: 0;
 	cursor: default;
 }
+.ui-link {
+	color: #428bca !important;
+}
 .ui-button {
 	display: inline-block;
 	position: relative;
@@ -1302,15 +1305,20 @@ div.tagsinput div { display:block; float: left; }
     vertical-align: middle;
     float: none;
 }
+.vertical-top {
+    display: inline-block;
+    vertical-align: top;
+    float: none;
+}
 /** TEXT BLOCK **/
 .text-block {
     margin: 30px 0;
 }
 /** MARQUEE TEXT **/
 .marquee {
-    margin-bottom:15px;
-    font-size:21px;
-    font-weight:200
+    margin-bottom: 15px;
+    font-size: 21px;
+    font-weight: 200;
 }
 
 /*********************************/
