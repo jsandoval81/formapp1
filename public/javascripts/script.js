@@ -1,6 +1,6 @@
 
 (function ($) {
-    "use strict";
+    'use strict';
 
     //========================
     //== FUNCTION VARIABLES ==
@@ -12,69 +12,69 @@
     //== NAVIGATION MENUS ==
     //======================
     //== Highlight the top nav menu items
-    $("#top-menu a").filter(function () {
+    $('#top-menu a').filter(function () {
         var thisURL = $(this).url();
         return thisURL.segment(2) === pageURL.segment(2);
-    }).parent().addClass("active");
+    }).parent().addClass('active');
 
     //== Highlight the sub nav menu items
-    $("#profile-menu a, #about-menu a").filter(function () {
+    $('#profile-menu a, #about-menu a').filter(function () {
         var thisURL = $(this).url();
         return thisURL.segment(3) === pageURL.segment(3);
-    }).parent().addClass("active");
+    }).parent().addClass('active');
 
     //====================
     //== PROFILE VIEWER ==
     //====================
     //== Handle changes to profile filters
-    $("#profile-filters-container select").change(function (e, data) {
+    $('#profile-filters-container select').change(function (e, data) {
 
         //== Set selected values
-        var companyVal = $("#company-filter").val().trim(),
-            teamVal    = $("#team-filter").val().trim();
+        var companyVal = $('#company-filter').val().trim(),
+            teamVal    = $('#team-filter').val().trim();
 
         //== If Company and Team selections have been made send the data request
         if (companyVal && teamVal) {
             $.ajax({
-                url:  "/ti/profiles/filter",
-                type: "POST",
+                url:  '/ti/profiles/filter',
+                type: 'POST',
                 data: {
-                    "company":    companyVal,
-                    "department": teamVal
+                    'company':    companyVal,
+                    'department': teamVal
                 },
                 success: function (data, textStatus, jqXHR) {
                     if (data.trim()) {
-                        $("#profile-list").html(data);
+                        $('#profile-list').html(data);
                     } else {
-                        $("#profile-list").html($("#invalid-filter-text").html());
+                        $('#profile-list').html($('#invalid-filter-text').html());
                     }
                 },
                 error: function (jqXHR, textStatus, errorThrown) {
-                    alert(errorThrown + ". Unable to return results");
+                    alert(errorThrown + '. Unable to return results');
                     location.reload(true);
                 }
             });
         } else {
-            $("#profile-list").html($("#initial-filter-text").html());
+            $('#profile-list').html($('#initial-filter-text').html());
         }
     });
 
     //== Handle profile click
-    $(document).on("touchstart click", ".profile-item", function (e) {
+    $(document).on('touchstart click', '.profile-item', function (e) {
         $.ajax({
-            url:  "/ti/profiles/detail",
-            type: "POST",
+            url:  '/ti/profiles/detail',
+            type: 'POST',
             data: {
-                "profileID": this.id
+                'profileID': this.id
             },
             success: function (data, textStatus, jqXHR) {
                 if (data.trim()) {
-                    $("#modal-content").html(data);
-                    $(".modal").modal({
+                    $('#modal-content').html(data);
+                    $('.modal').modal({
                         fadeDuration: 250
                     });
                 } else {
-                    alert("Failed to grab profile detail");
+                    alert('Failed to grab profile detail');
                 }
             },
             error: function (jqXHR, textStatus, errorThrown) {
@@ -85,56 +85,56 @@
 
     $(function () {
         //== Trigger selection on ready. It will automatically select the logged in values, or display instructional text
-        $("#company-filter").trigger("change", [{ initial: true }]);
+        $('#company-filter').trigger('change', [{ initial: true }]);
     });
 
     //====================
     //== SUMMARY REPORT ==
     //====================
     //== Handle changes to profile filters
-    $("#summary-filters-container select").change(function (e, data) {
+    $('#summary-filters-container select').change(function (e, data) {
 
         //== Set selected values
-        var companyVal = $("#company-filter").val().trim(),
-            teamVal    = $("#team-filter").val().trim();
+        var companyVal = $('#company-filter').val().trim(),
+            teamVal    = $('#team-filter').val().trim();
 
         //== If Company and Team selections have been made send the data request
         if (companyVal && teamVal) {
             $.ajax({
-                url:  "/ti/summary/filter",
-                type: "POST",
+                url:  '/ti/summary/filter',
+                type: 'POST',
                 data: {
-                    "company":    companyVal,
-                    "department": teamVal
+                    'company':    companyVal,
+                    'department': teamVal
                 },
                 success: function (data, textStatus, jqXHR) {
                     if (data.trim()) {
-                        $("#summary-content").html(data);
+                        $('#summary-content').html(data);
                         var settings = {
-                            "size": {
-                                "grid": 8,
-                                "normalize": false
+                            'size': {
+                                'grid': 8,
+                                'normalize': false
                             },
-                            "options": {
-                                "color":          "random-dark",
-                                "printMultiplier": 1,
-                                "sort":           "highest"
+                            'options': {
+                                'color':          'random-dark',
+                                'printMultiplier': 1,
+                                'sort':           'highest'
                             },
-                            "font":  "Futura, Helvetica, sans-serif",
-                            "shape": "square"
+                            'font':  'Futura, Helvetica, sans-serif',
+                            'shape': 'square'
                         };
-                        $("#summary-wordcloud").awesomeCloud(settings);
+                        $('#summary-wordcloud').awesomeCloud(settings);
                     } else {
-                        $("#summary-content").html($("#invalid-filter-text").html());
+                        $('#summary-content').html($('#invalid-filter-text').html());
                     }
                 },
                 error: function (jqXHR, textStatus, errorThrown) {
-                    alert(errorThrown + ". Unable to return results");
+                    alert(errorThrown + '. Unable to return results');
                     location.reload(true);
                 }
             });
         } else {
-            $("#summary-content").html($("#initial-filter-text").html());
+            $('#summary-content').html($('#initial-filter-text').html());
         }
     });
 
@@ -144,9 +144,9 @@
     //== Handle the activation of the accordion list
     function enableAccordion(container, headerTag, active, callback) {
         $(container).accordion({
-            event:       "click",
+            event:       'click',
             header:       headerTag,
-            heightStyle: "content",
+            heightStyle: 'content',
             collapsible:  true,
             active:       active,
             // Intercept the events to allow more than one pane to be open at a time
@@ -156,18 +156,18 @@
                     isPanelSelected;
                 if (ui.newHeader[0]) {
                     currHeader  = ui.newHeader;
-                    currContent = currHeader.next(".ui-accordion-content");
+                    currContent = currHeader.next('.ui-accordion-content');
                 } else {
                     currHeader  = ui.oldHeader;
-                    currContent = currHeader.next(".ui-accordion-content");
+                    currContent = currHeader.next('.ui-accordion-content');
                 }
-                isPanelSelected = currHeader.attr("aria-selected") === "true";
+                isPanelSelected = currHeader.attr('aria-selected') === 'true';
 
-                currHeader.toggleClass("ui-corner-all", isPanelSelected).toggleClass("accordion-header-active ui-state-active ui-corner-top", !isPanelSelected).attr("aria-selected", ((!isPanelSelected).toString()));
+                currHeader.toggleClass('ui-corner-all', isPanelSelected).toggleClass('accordion-header-active ui-state-active ui-corner-top', !isPanelSelected).attr('aria-selected', ((!isPanelSelected).toString()));
 
-                currHeader.children(".ui-icon").toggleClass("ui-icon-triangle-1-e", isPanelSelected).toggleClass("ui-icon-triangle-1-s", !isPanelSelected);
+                currHeader.children('.ui-icon').toggleClass('ui-icon-triangle-1-e', isPanelSelected).toggleClass('ui-icon-triangle-1-s', !isPanelSelected);
 
-                currContent.toggleClass("accordion-content-active", !isPanelSelected);
+                currContent.toggleClass('accordion-content-active', !isPanelSelected);
                 if (isPanelSelected) {
                     currContent.slideUp();
                 } else {
@@ -178,32 +178,32 @@
             }
         });
         //== Execute the callback
-        if (callback && typeof callback === "function") {
+        if (callback && typeof callback === 'function') {
             callback();
         }
     }
 
     //== Enable to expandable accordion list
-    $("#about-accordion-enable").on("touchstart click", function () {
-        enableAccordion(".ui-accordion-top", "h3", false);
-        enableAccordion(".ui-accordion-sub", "h4", false);
-        $("#about-accordion-enable").slideToggle("fast", function () {
-            $("#about-accordion-disable").slideToggle("fast");
+    $('#about-accordion-enable').on('touchstart click', function () {
+        enableAccordion('.ui-accordion-top', 'h3', false);
+        enableAccordion('.ui-accordion-sub', 'h4', false);
+        $('#about-accordion-enable').slideToggle('fast', function () {
+            $('#about-accordion-disable').slideToggle('fast');
         });
     });
 
     //== Disable the expandable accordion list
-    $("#about-accordion-disable").on("touchstart click", function () {
-        $(".ui-accordion-sub").accordion("destroy");
-        $(".ui-accordion-top").accordion("destroy");
-        $("#about-accordion-disable").slideToggle("fast", function () {
-            $("#about-accordion-enable").slideToggle("fast");
+    $('#about-accordion-disable').on('touchstart click', function () {
+        $('.ui-accordion-sub').accordion('destroy');
+        $('.ui-accordion-top').accordion('destroy');
+        $('#about-accordion-disable').slideToggle('fast', function () {
+            $('#about-accordion-enable').slideToggle('fast');
         });
     });
 
     $(function () {
         //== Determine the accordion active state
-        var activeIndex = $(".ui-accordion-top > div").index($("div.active")),
+        var activeIndex = $('.ui-accordion-top > div').index($('div.active')),
             active;
         if (activeIndex === -1) {
             active = false;
@@ -211,10 +211,10 @@
             active = activeIndex;
         }
         //== Enable accordion on ready
-        enableAccordion(".ui-accordion-top", "h3", active);
-        enableAccordion(".ui-accordion-sub", "h4", false, function () {
+        enableAccordion('.ui-accordion-top', 'h3', active);
+        enableAccordion('.ui-accordion-sub', 'h4', false, function () {
             //== Show help text
-            $("#about-main-text").fadeIn('slow');
+            $('#about-main-text').fadeIn('slow');
         });
     });
 
@@ -225,18 +225,18 @@
     function updateTag(tag, id, action) {
         if (tag && id && action) {
             $.ajax({
-                url:  "/ti/profiles/strengths",
-                type: "PUT",
+                url:  '/ti/profiles/strengths',
+                type: 'PUT',
                 data: {
-                    "tag":    tag,
-                    "type":   id.charAt(5).toUpperCase() + id.substring(6),
-                    "action": action
+                    'tag':    tag,
+                    'type':   id.charAt(5).toUpperCase() + id.substring(6),
+                    'action': action
                 },
                 success: function (data, textStatus, jqXHR) {
                     //alert(data);
                 },
                 error: function (jqXHR, textStatus, errorThrown) {
-                    alert(errorThrown + ". Tag not updated");
+                    alert(errorThrown + '. Tag not updated');
                     location.reload(true);
                 }
             });
@@ -245,23 +245,23 @@
 
     $(function () {
         //== If page has a tag box
-        if ($("#tag-box-container").length) {
+        if ($('#tag-box-container').length) {
             //== Define tags input options
             var tagOptions = {
-                    "width":              "100%",
-                    "height":             "100px",
-                    "defaultText":        "Add...",
-                    "removeWithBackspace": false,
-                    "maxChars":            20,
-                    "onAddTag":            updateTag,
-                    "onRemoveTag":         updateTag
+                    'width':              '100%',
+                    'height':             '100px',
+                    'defaultText':        'Add...',
+                    'removeWithBackspace': false,
+                    'maxChars':            20,
+                    'onAddTag':            updateTag,
+                    'onRemoveTag':         updateTag
                 };
             //== Initialize the tag boxes
-            $("#tags-team").tagsInput(tagOptions);
-            $("#tags-company").tagsInput(tagOptions);
-            $("#tags-other").tagsInput(tagOptions);
+            $('#tags-team').tagsInput(tagOptions);
+            $('#tags-company').tagsInput(tagOptions);
+            $('#tags-other').tagsInput(tagOptions);
             //== Show the tag inputs
-            $("#tag-box-container").fadeIn('slow');
+            $('#tag-box-container').fadeIn('slow');
         }
     });
 
@@ -270,29 +270,29 @@
     //================================
     //== Update <select> group to control/cascade the availability of the <select> elements
     function cascadeSelectAvailability(selectClass, nonCascadeVal) {
-        var selectID   = selectClass.replace(".", "#"),
-            classSize  = $("select" + selectClass).length,
-            selectNum  = "",
+        var selectID   = selectClass.replace('.', '#'),
+            classSize  = $('select' + selectClass).length,
+            selectNum  = '',
             nSelectNum = 0,
             loopNum    = 0,
             keepLoop   = true;
         //== If first selection is No Preference then disable other <select>s
-        if ($(selectID + "-1 option:selected").text() === nonCascadeVal) {
-            $(selectClass + ":not(" + selectID + "-1)").val("");
-            $(selectClass + ":not(" + selectID + "-1)").prop("disabled", true);
+        if ($(selectID + '-1 option:selected').text() === nonCascadeVal) {
+            $(selectClass + ':not(' + selectID + '-1)').val('');
+            $(selectClass + ':not(' + selectID + '-1)').prop('disabled', true);
         } else {
         //== Otherwise cascade the availability
-            $("select" + selectClass).each(function (i, select) {
+            $('select' + selectClass).each(function (i, select) {
                 selectNum  = select.id.split('-').pop();
                 nSelectNum = Number(selectNum);
                 //== If <select> is NOT blank then enable the next <select>
-                if ($(selectID + "-" + selectNum).val() !== "") {
-                    $(selectID + "-" + (nSelectNum + 1).toString()).prop("disabled", false);
+                if ($(selectID + '-' + selectNum).val() !== '') {
+                    $(selectID + '-' + (nSelectNum + 1).toString()).prop('disabled', false);
                 } else {
                 //== If <select> is blank then disable the <select>s that follow it
                     for (loopNum = Number(selectNum) + 1; loopNum <= classSize; loopNum += 1) {
-                        $(selectID + "-" + loopNum.toString()).val("");
-                        $(selectID + "-" + loopNum.toString()).prop("disabled", true);
+                        $(selectID + '-' + loopNum.toString()).val('');
+                        $(selectID + '-' + loopNum.toString()).prop('disabled', true);
                     }
                     //== Stop looping <select>s if we found a blank
                     keepLoop = false;
@@ -305,21 +305,21 @@
     //== Update <select> group to keep options mutually exclusive
     function mutuallyExclusiveSelects(selectClass, nonCascadeVal) {
         var excludeVals  = [],
-            selectedVal  = "",
-            selectedText = "";
+            selectedVal  = '',
+            selectedText = '';
         //== Catalog the selected values in the group
         $(selectClass).each(function () {
             selectedVal  = $(this).val();
             selectedText = $(this).text();
             if (selectedVal && selectedText !== nonCascadeVal) {
-                excludeVals.push({ "selectID": "." + $(this).id, "selectVal": $(this).val() });
+                excludeVals.push({ 'selectID': '.' + $(this).id, 'selectVal': $(this).val() });
             }
         });
         //== Show everything
-        $(selectClass + " option").show(0);
+        $(selectClass + ' option').show(0);
         //== Hide the selected values from the catalog
         excludeVals.forEach(function (exclude) {
-            $(selectClass + ":not(" + exclude.selectID + ") option[value='" + exclude.selectVal + "']").hide(0);
+            $(selectClass + ':not(' + exclude.selectID + ') option[value="' + exclude.selectVal + '"]').hide(0);
         });
         //== Then cascade the element availability
         cascadeSelectAvailability(selectClass, nonCascadeVal);
@@ -328,13 +328,13 @@
     //== Update preferences in DB
     function updatePrefs(prefType, typeCategory, choiceNum, choiceValue, nonCascadeVal) {
         $.ajax({
-            url: "/ti/profiles/preferences",
-            type: "PUT",
+            url: '/ti/profiles/preferences',
+            type: 'PUT',
             data: {
-                "prefType":     prefType,
-                "typeCategory": typeCategory,
-                "choiceNum":    choiceNum,
-                "choiceValue":  choiceValue
+                'prefType':     prefType,
+                'typeCategory': typeCategory,
+                'choiceNum':    choiceNum,
+                'choiceValue':  choiceValue
             },
             success: function (data, textStatus, jqXHR) {
                 //== <select> class shall be returned
@@ -342,21 +342,21 @@
                 mutuallyExclusiveSelects(data, nonCascadeVal);
             },
             error: function (jqXHR, textStatus, errorThrown) {
-                alert(errorThrown + ": Preferences not updated");
+                alert(errorThrown + ': Preferences not updated');
                 location.reload(true);
             }
         });
     }
 
     //== Handle changes to Contact choices
-    $("select.contact-preferences").change(function (e, data) {
+    $('select.contact-preferences').change(function (e, data) {
         //== Identify the elements
         var prefType      = this.id.split('-').shift(),
             typeCategory  = this.id.split('-')[1],
             choiceClass   = '.' + prefType + '-' + typeCategory,
             choiceNum     = '',
             choiceValue   = '',
-            nonCascadeVal = "No Preference";
+            nonCascadeVal = 'No Preference';
 
         //== If not initial page load trigger then update DB
         if (!data) {
@@ -369,14 +369,14 @@
             }
         } else {
             //== Remove No Preference option from all but first <select>
-            $(choiceClass + ":not(" + choiceClass.replace(".", "#") + "-1) option:contains('" + nonCascadeVal + "')").remove();
+            $(choiceClass + ':not(' + choiceClass.replace('.', '#') + '-1) option:contains("' + nonCascadeVal + '")').remove();
             //== Trigger the mutually exclusive and cascade functionality
             mutuallyExclusiveSelects(choiceClass, nonCascadeVal);
         }
     });
 
     //== Handle changes to meeting preferences
-    $("select.meeting-preferences").change(function (e, data) {
+    $('select.meeting-preferences').change(function (e, data) {
         //== Identify the elements
         var id           = this.id,
             prefType     = id.split('-').shift(),
@@ -417,7 +417,7 @@
     });
 
     //== Handle changes to Time preferences
-    $(".time-preference-update").click(function (e, data) {
+    $('.time-preference-update').click(function (e, data) {
         var idArr        = this.id.split('-'),
             inputId      = '',
             i            = 0,
@@ -446,9 +446,9 @@
 
     $(function () {
         //== Trigger selection availability on load - 1 item from each list
-        $("#contact-help-1").trigger("change", [{ initial: true}]);
-        $("#contact-announcements-1").trigger("change", [{ initial: true}]);
-        $("#contact-brainstorm-1").trigger("change", [{ initial: true}]);
+        $('#contact-help-1').trigger('change', [{ initial: true}]);
+        $('#contact-announcements-1').trigger('change', [{ initial: true}]);
+        $('#contact-brainstorm-1').trigger('change', [{ initial: true}]);
     });
 
     //================================
@@ -457,40 +457,40 @@
     //== Update changes in the DB
     function updateAdmin(action, updateType, value, id) {
         $.ajax({
-            url:  "/ti/profiles/administrator",
-            type: "PUT",
+            url:  '/ti/profiles/administrator',
+            type: 'PUT',
             data: {
-                "action":     action,
-                "updateType": updateType,
-                "value":      value,
-                "id":         id
+                'action':     action,
+                'updateType': updateType,
+                'value':      value,
+                'id':         id
             },
             success: function (data, textStatus, jqXHR) {
-                if (updateType === "user" && action === "Reset") {
+                if (updateType === 'user' && action === 'Reset') {
                     //== For password resets, clear the input and populate the server message
-                    $("#pw-reset-" + id).val("");
-                    if (data !== "success") {
-                        $("#admin-reset-error").text(data);
+                    $('#pw-reset-' + id).val('');
+                    if (data !== 'success') {
+                        $('#admin-reset-error').text(data);
                     } else {
-                        $("#admin-reset-success").text("Password successfully reset!");
+                        $('#admin-reset-success').text('Password successfully reset!');
                     }
                 } else {
                     //== For everything else, display any alerts and reload the page
-                    if (data !== "success") {
+                    if (data !== 'success') {
                         alert(data);
                     }
                     location.reload(true);
                 }
             },
             error: function (jqXHR, textStatus, errorThrown) {
-                alert("SERVER ERROR. DB not updated");
+                alert('SERVER ERROR. DB not updated');
                 location.reload(true);
             }
         });
     }
 
     //== Handle new list values
-    $("button.admin-update").click(function () {
+    $('button.admin-update').click(function () {
         var i             = 0,
             //== Determine the type of list
             updateTypeArr = this.id.split('-'),
@@ -507,14 +507,14 @@
                 updateType += '-' + updateTypeArr[i];
             }
         }
-        if (value.trim() !== "") {
+        if (value.trim() !== '') {
             //== Call the async updater
-            updateAdmin("Add", updateType, value);
+            updateAdmin('Add', updateType, value);
         }
     });
 
     //== Handle deleted list values
-    $(".admin-delete").click(function () {
+    $('.admin-delete').click(function () {
         var updateTypeArr = this.id.split('-'),
             value         = updateTypeArr.pop(),
             updateType,
@@ -528,25 +528,25 @@
             }
         }
         //== Call the async updater
-        updateAdmin("Remove", updateType, value);
+        updateAdmin('Remove', updateType, value);
     });
 
     //== Handle user detail view
-    $(document).on("touchstart click", ".admin-user", function (e) {
+    $(document).on('touchstart click', '.admin-user', function (e) {
         $.ajax({
-            url:  "/ti/profiles/administrator/user",
-            type: "POST",
+            url:  '/ti/profiles/administrator/user',
+            type: 'POST',
             data: {
-                "profileID": this.id.split('-').pop()
+                'profileID': this.id.split('-').pop()
             },
             success: function (data, textStatus, jqXHR) {
                 if (data.trim()) {
-                    $("#modal-content").html(data);
-                    $(".modal").modal({
+                    $('#modal-content').html(data);
+                    $('.modal').modal({
                         fadeDuration: 250
                     });
                 } else {
-                    alert("Failed to grab user detail");
+                    alert('Failed to grab user detail');
                 }
             },
             error: function (jqXHR, textStatus, errorThrown) {
@@ -556,55 +556,55 @@
     });
 
     //== Handle password reset start
-    $(document).on("touchstart click", "button.admin-reset", function (e) {
-        $("button.admin-reset").prop("disabled", true);
-        $("#admin-reset-user").show("slide", { direction: "left" }, 500);
+    $(document).on('touchstart click', 'button.admin-reset', function (e) {
+        $('button.admin-reset').prop('disabled', true);
+        $('#admin-reset-user').show('slide', { direction: 'left' }, 500);
     });
 
     //== Handle password reset cancel
-    $(document).on("touchstart click", "button.admin-reset-cancel", function (e) {
-        $("#admin-reset-user").hide("slide", { direction: "left" }, 500);
-        $("#admin-reset-user input").val("");
-        $("button.admin-reset").prop("disabled", false);
+    $(document).on('touchstart click', 'button.admin-reset-cancel', function (e) {
+        $('#admin-reset-user').hide('slide', { direction: 'left' }, 500);
+        $('#admin-reset-user input').val('');
+        $('button.admin-reset').prop('disabled', false);
     });
 
     //== Handle password reset confirm
-    $(document).on("touchstart click", "button.admin-reset-confirm", function (e) {
+    $(document).on('touchstart click', 'button.admin-reset-confirm', function (e) {
         var id         = this.id.split('-').pop(),
-            updateType = "user",
-            value      = $("#pw-reset-" + id).val();
+            updateType = 'user',
+            value      = $('#pw-reset-' + id).val();
         //== Call the async updater
         if (updateType && id && value) {
-            /*alert("Reset" + ", updateType: " + updateType + ", user: " + id + ", new password: " + value);*/
-            updateAdmin("Reset", updateType, value, id);
+            /*alert('Reset, updateType: ' + updateType + ', user: ' + id + ', new password: ' + value);*/
+            updateAdmin('Reset', updateType, value, id);
         } else {
-            alert("Invalid password");
+            alert('Invalid password');
         }
     });
 
     //== Handle user remove start
-    $(document).on("touchstart click", "button.admin-remove", function (e) {
-        $("button.admin-remove").prop("disabled", true);
-        $("#admin-remove-user").show("slide", { direction: "up" }, 500);
+    $(document).on('touchstart click', 'button.admin-remove', function (e) {
+        $('button.admin-remove').prop('disabled', true);
+        $('#admin-remove-user').show('slide', { direction: 'up' }, 500);
     });
 
     //== Handle user remove cancel
-    $(document).on("touchstart click", "button.admin-remove-cancel", function (e) {
-        $("#admin-remove-user").hide("slide", { direction: "up" }, 500);
-        $("button.admin-remove").prop("disabled", false);
+    $(document).on('touchstart click', 'button.admin-remove-cancel', function (e) {
+        $('#admin-remove-user').hide('slide', { direction: 'up' }, 500);
+        $('button.admin-remove').prop('disabled', false);
     });
 
     //== Handle user remove confirm
-    $(document).on("touchstart click", "button.admin-remove-confirm", function (e) {
+    $(document).on('touchstart click', 'button.admin-remove-confirm', function (e) {
         var id         = this.id.split('-').pop(),
-            updateType = "user",
-            value      = "";
+            updateType = 'user',
+            value      = '';
         //== Call the async updater
         if (updateType && id) {
-            /*alert("Remove" + ", updateType: " + updateType + ", user: " + id);*/
-            updateAdmin("Remove", updateType, value, id);
+            /*alert('Remove, updateType: ' + updateType + ', user: ' + id);*/
+            updateAdmin('Remove', updateType, value, id);
         } else {
-            alert("Could not determine the user ID");
+            alert('Could not determine the user ID');
         }
     });
 

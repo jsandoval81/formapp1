@@ -1,4 +1,4 @@
-"use strict";
+'use strict';
 
 var express      = require('express');
 var session      = require('express-session');
@@ -38,7 +38,7 @@ routes.initialize(app, passport);
 //== Connect to the DB server
 mongoose.connect('mongodb://localhost/ti');
 mongoose.connection.on('open', function () {
-    console.log("Connected to Mongoose...");
+    console.log('Connected to Mongoose...');
 });
 
 //== Catch 404

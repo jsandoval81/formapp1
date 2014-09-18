@@ -1,4 +1,4 @@
-"use strict";
+'use strict';
 
 module.exports = {
     //== Index redirects to one of the about/help tabs
@@ -13,7 +13,7 @@ module.exports = {
     },
 
     howto: function (req, res) {
-        var section = "";
+        var section = '';
         if (req.params.section) {
             section = req.params.section;
         }

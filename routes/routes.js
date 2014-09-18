@@ -28,8 +28,11 @@ function isLoggedIn(req, res, next) {
 
 //== Make sure a user is logged in as Administrator
 function isLoggedInAdmin(req, res, next) {
-    var userEmail = md5("this4now"),
-        foundEmail = false;
+    var adminEmailLength = 0,
+        userEmail        = md5("this4now"),
+        foundEmail       = false,
+        isAdmin          = false,
+        i                = 0;
     if (req.user) {
         //== Finding the email purposefully ignores the global helper function for "security by obscurity"
         if (req.user.linkedin.email)      { userEmail = req.user.linkedin.email; foundEmail = true; }
@@ -41,10 +44,10 @@ function isLoggedInAdmin(req, res, next) {
     //== Make sure the user is at least logged in and we have an email
     if (req.isAuthenticated() && foundEmail) {
         Admin.findOne({ 'adminUser.admin': 'Y' }, function (err, admin) {
-            var isAdmin = false,
-                i       = 0;
+            //== Cache array length
+            adminEmailLength = admin.adminUser.email.length;
             //== Check admin email list for user's email
-            for (i = 0; i < admin.adminUser.email.length; i += 1) {
+            for (i = 0; i < adminEmailLength; i += 1) {
                 if (userEmail === admin.adminUser.email[i]) {
                     isAdmin = true;
                     break;
@@ -63,7 +66,7 @@ function isLoggedInAdmin(req, res, next) {
     }
 }
 
-module.exports.initialize = function (app, passport) {
+module.exports.initialize = function (app) {
 
 //===================================================
 //== PRODUCTION ROUTES (using NGINX reverse proxy) ==

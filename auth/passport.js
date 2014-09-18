@@ -1,4 +1,4 @@
-"use strict";
+'use strict';
 
 //== Load Passport auth strategies
 var LocalStrategy    = require('passport-local').Strategy;
